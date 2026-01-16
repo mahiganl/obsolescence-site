@@ -79,7 +79,7 @@ export const ui = {
     'gallery.title': 'Dessins originaux',
     'gallery.description': 'Par Mahigan Lepage, tous droits réservés',
     'illustration.caption': 'Dessin original par Mahigan Lepage • Mise en couleur par IA',
-    'intro.author': 'par Mahigan Lepage, Ph. D.'
+    'intro.author': 'Par Mahigan Lepage, Ph. D.'
   },
   en: {
     'nav.previous': 'Previous chapter',
@@ -93,7 +93,7 @@ export const ui = {
     'gallery.title': 'Original Drawings',
     'gallery.description': 'By Mahigan Lepage, all rights reserved',
     'illustration.caption': 'Original drawing by Mahigan Lepage • AI Coloring',
-    'intro.author': 'by Mahigan Lepage, Ph.D.'
+    'intro.author': 'By Mahigan Lepage, Ph.D.'
   }
 } as const;
 
