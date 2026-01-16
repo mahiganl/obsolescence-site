@@ -1,4 +1,92 @@
 ---
-// Redirect to introduction
-return Astro.redirect('/fr/introduction');
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChapterNavigation from '../../components/ChapterNavigation.astro';
+import ChapterIllustration from '../../components/ChapterIllustration.astro';
+import { languages, t } from '../../i18n/config';
+
+const lang = 'fr';
+const currentSlug = 'introduction';
+const bookTitle = languages[lang].bookTitle;
+
+// Import the illustration
+import introImage from '../../../assets/colored-drawings/introduction.png';
 ---
+
+<BaseLayout title="Introduction" lang={lang} currentSlug={currentSlug} hideTitle={true} tagline="L'être humain tombera-t-il en désuétude?">
+  <!-- Essay Title Banner -->
+  <header class="mb-8 text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-stone-900 dark:text-stone-100 leading-tight mb-4">
+      {bookTitle}
+    </h1>
+    <p class="text-lg sm:text-xl text-stone-600 dark:text-stone-300 font-sans">
+      {t(lang, 'intro.author')}
+    </p>
+  </header>
+
+  <!-- Chapter Illustration -->
+  <ChapterIllustration src={introImage.src} alt="Illustration pour l'introduction" lang={lang} />
+
+  <!-- Chapter Title -->
+  <header class="mb-10 text-center">
+    <p class="text-sm font-sans uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Introduction</p>
+    <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+      Le crépuscule des humains?
+    </h2>
+  </header>
+
+  <!-- Chapter Content -->
+  <article class="prose mx-auto">
+    <p>
+      <em>L'obsolescence humaine programmée</em> se veut une introduction accessible au problème de la sûreté de l'IA. L'essai a été pensé pour des lecteurs n'ayant pas de connaissances préalables dans le domaine de l'intelligence artificielle. Aucune notion n'est posée qui ne soit expliquée; aucun jargon n'est utilisé qui ne soit décrypté.
+    </p>
+
+    <p>
+      Le texte ne vise pas à présenter des idées nouvelles, mais bien à faire œuvre utile en synthétisant certaines des thèses les plus convaincantes qui brossent un portrait des risques liés à l'intelligence artificielle à mesure que celle-ci gagne en capacité.
+    </p>
+
+    <p>
+      Au-delà de la bulle et de la « hype », l'objectif avoué de sociétés comme OpenAI, Google, Meta, DeepSeek ou xAI est de créer une intelligence artificielle générale (IAG) capable d'accomplir toutes les tâches que les êtres humains peuvent faire, voire une superintelligence artificielle (SIA) qui surpasserait tous les humains dans tous les domaines.
+    </p>
+
+    <p>
+      Les implications d'une telle invention sont sans commune mesure. Beaucoup d'experts estiment qu'une telle IA – égale ou supérieure à l'humain – pourrait être parmi nous d'ici la fin de la décennie. Elle risque de pousser les salaires sous le seuil de subsistance, selon le Prix Nobel d'économie Joseph Stiglitz, ou d'échapper à notre contrôle et même de nous rayer de la carte, selon le Prix Nobel de physique Geoffrey Hinton et le récipiendaire du Prix Turing Yoshua Bengio.
+    </p>
+
+    <p>
+      Ces prédictions peuvent paraître alarmistes, mais elles sont en réalité raisonnables étant donné la nature des modèles de langage de grande taille (LLM), qui sont des « boîtes noires ». Si les ingénieurs maîtrisent l'architecture et l'algorithme d'apprentissage, ils ne programment pas les modèles qu'ils créent. Ils les cultivent, les « font pousser », en quelque sorte, au gré d'un processus d'ajustement autonome de milliards de paramètres.
+    </p>
+
+    <p>
+      Les sociétés d'IA avancent à l'aveugle, investissent des sommes faramineuses dans la puissance brute et infiniment peu dans la sûreté.
+    </p>
+
+    <p>
+      La question ne doit plus être réservée aux informaticiens. L'IA avancée touchera tout le monde sans exception. Il est temps que les citoyens, travailleuses, artistes, écrivains, philosophes, sociologues, politiciens, diplomates, etc., prennent le problème à bras-le-corps. Sans pénétrer toutes les subtilités mathématiques ou algorithmiques, nous pouvons saisir l'essentiel : il se crée en ce moment une intelligence puissante, complexe et opaque qui comporte des risques énormes.
+    </p>
+
+    <p>
+      En m'appuyant sur les travaux de plusieurs penseurs, j'aborde ici deux risques cruciaux.
+    </p>
+
+    <p>
+      Le premier est économique : c'est le « Grand Déclassement », l'obsolescence du travailleur humain dont la valeur deviendrait négative au regard d'agents IA beaucoup moins chers et plus efficaces.
+    </p>
+
+    <p>
+      Le second est existentiel : c'est le problème de l'alignement. Une superintelligence poursuivra-t-elle des objectifs compatibles avec notre survie?
+    </p>
+
+    <p>
+      Si le portrait peut sembler sombre, c'est que les risques sont réels. Je n'ai pas de réponses toutes faites; nous devons trouver ensemble des pistes de solution. C'est à nous, et non pas à une poignée de milliardaires et aux dirigeants qu'ils influencent, de décider quelle forme prendront nos sociétés et notre planète à l'âge de l'intelligence.
+    </p>
+
+    <hr />
+
+    <p>
+      <em>Tous les dessins qui accompagnent cet article ont été faits par Mahigan Lepage et colorés au moyen de Nano Banana Pro. Pour voir les dessins originaux en tons de gris, <a href="/fr/dessins-originaux">cliquez ici</a>.</em>
+    </p>
+  </article>
+
+  <!-- Chapter Navigation -->
+  <ChapterNavigation lang={lang} currentSlug={currentSlug} />
+</BaseLayout>

@@ -1,0 +1,11 @@
+# Séparation stricte des domaines
+
+# Si on demande du contenu FR sur le domaine Anglais -> Redirection vers le domaine Français
+https://human-obsolescence.com/fr/*  https://obsolescence-humaine.com/fr/:splat  301!
+
+# Si on demande du contenu EN sur le domaine Français -> Redirection vers le domaine Anglais
+https://obsolescence-humaine.com/en/*  https://human-obsolescence.com/en/:splat  301!
+
+# Règles d'accueil (Racine)
+https://human-obsolescence.com/  /en/  301!
+https://obsolescence-humaine.com/  /fr/  301!

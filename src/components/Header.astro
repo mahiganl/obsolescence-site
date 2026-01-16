@@ -13,9 +13,10 @@ const { lang, currentSlug = '', hideTitle = false, tagline } = Astro.props;
 const alternateLang = getAlternateLang(lang);
 const alternateSlug = getAlternateSlug(lang, currentSlug);
 const bookTitle = languages[lang].bookTitle;
+const alternateDomain = languages[alternateLang].domain;
 
-// Build alternate URL (will be absolute domain in production)
-const alternateUrl = `/${alternateLang}/${alternateSlug}`;
+// Build absolute URL with domain for language switching
+const alternateUrl = `https://${alternateDomain}/${alternateLang}/${alternateSlug}`;
 ---
 
 <header class="sticky top-0 z-40 bg-stone-50/95 dark:bg-stone-950/95 backdrop-blur border-b border-stone-200 dark:border-stone-800">
