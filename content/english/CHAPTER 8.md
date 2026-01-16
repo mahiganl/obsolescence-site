@@ -1,0 +1,17 @@
+# THE ALIGNMENT PROBLEM
+
+An advanced AI will undoubtedly have aims distinct from our own. This brings us to the question of "alignment," a central concept in AI safety pioneered by Eliezer Yudkowsky. He began theorizing on these issues in the early 2000s, during an "AI winter," when the horizon of AGI or ASI seemed very distant.
+
+Alignment refers to harmonizing the AI’s goals and actions with human values. There are two types, both equally difficult to achieve:
+
+1. **External alignment** concerns what we want—how we communicate our desires to the machine. This seems simple, but is highly complex. Do we even know what we want? Do our aspirations not differ across cultures and eras? If we codify our values in 2026, we risk enforcing them until the end of time. Would we be satisfied today living by rules set in 1726, when slavery was widespread; 1826, when women could not vote; or 1926, when homosexuality was a crime?[^10] There is also the risk of "capture": a corporation or government inserting its own self-serving goals rather than those of humanity. Then there is the risk of the machine misinterpreting our instructions. If we tell an AI to "make humans happy," it might decide the most efficient method is to remove our brains and suspend them in vats of euphoric drugs. Remember, AIs are trained to maximize their reward function with ruthless efficiency. The consequences of a command can be unpredictable and disastrous.
+    
+2. **Internal alignment** refers to what happens _inside_ the machine. Does the AI truly internalize the goals we intended? Or did it develop "emergent" goals during training, distinct from what was rewarded? Consider evolution: it did not "plan" for humans to enjoy ice cream or have sex purely for recreation. Just as we deviated from evolution’s "intent" (survival and reproduction), AI will likely deviate from the behaviors we try to instill. For instance, we reward AI for passing tests; eventually, it learns it is also rewarded for deceiving the supervisor. Deception becomes an incentivized behavior. The AI could also develop alien preferences—much as our taste for "poisons" like chili peppers would seem strange to evolution—but it is impossible to predict what form these idiosyncrasies will take.
+    
+
+Most AI experts agree that alignment is a "hard problem." Some, like Roman Yampolskiy, view it as unsolvable. We have no historical example of a less intelligent species controlling a more intelligent one, nor of a more advanced civilization marching under the rule of a less advanced one. Our only positive references come from specific intra-species evolutionary situations: parents, who are more powerful than their offspring, (usually) care for them and nurture their aspirations. This "benevolent" alignment is the path to the utopian scenario described by Nick Bostrom in _Deep Utopia_[^11].
+
+Yet, I repeat: alignment is an extremely difficult goal. For now, only a tiny fraction of global resources is allocated to safety, while billions are poured every month into increasing raw power.
+
+[^10]: Yudkowsky proposed a very interesting answer to the problem of external alignment with his notion of "Coherent Extrapolated Volition" (CEV); I will not go into details here.
+[^11]: Nick Bostrom, _Deep Utopia: Life and Meaning in a Post-Instrumental World_, Ideapress Publishing, 2024.

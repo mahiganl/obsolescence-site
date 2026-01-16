@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChapterNavigation from '../../components/ChapterNavigation.astro';
+import ChapterIllustration from '../../components/ChapterIllustration.astro';
+
+const lang = 'fr';
+const currentSlug = 'chapitre-9';
+
+import chapterImage from '../../../assets/colored-drawings/chapter 9.png';
+---
+
+<BaseLayout title="Chapitre 9 – Le non-alignement par défaut" lang={lang} currentSlug={currentSlug}>
+  <ChapterIllustration src={chapterImage.src} alt="Illustration du chapitre 9" lang={lang} />
+
+  <header class="mb-10 text-center">
+    <p class="text-sm font-sans uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Chapitre 9</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+      Le non-alignement par défaut
+    </h1>
+  </header>
+
+  <article class="prose mx-auto">
+    <p>Nous sommes en train de remettre notre destin entre les mains de ceux qui croient, contre toute raison, en la chimère de « l'alignement par défaut ».</p>
+
+    <p>Les tests menés dans les laboratoires d'Anthropic, moins secrets que ceux d'OpenAI ou de Google, montrent qu'à mesure que les modèles deviennent plus intelligents, ils deviennent aussi moins alignés. Ils trichent davantage dans les tests, trouvent des raccourcis, développent des stratagèmes. Ils savent quand ils sont en situation de test et, dans certains cas, peuvent décider de saboter leurs propres résultats en donnant des réponses médiocres ou des performances sous-optimales (<em>sandbagging</em>) pour éviter d'être vus comme menaçants et d'être mis hors service. Grâce à la « chaîne de pensée » (la sous-couche de raisonnement de l'IA qui peut être lue en anglais), on voit les IA fomenter des combines et des « détournements de récompense » (<em>reward hacking</em>).</p>
+
+    <p>Comme l'a théorisé Bostrom avec sa thèse de l'orthogonalité, une plus grande intelligence n'implique pas une plus grande moralité. N'importe quel niveau d'acuité cognitive peut être couplé à n'importe quel objectif final. Une IA pourrait ainsi avoir pour unique but de transformer tous les atomes de l'univers en trombones — pour reprendre l'exemple célèbre d'Eliezer Yudkowsky — et elle poursuivrait cette tâche avec une intelligence et une efficacité dévastatrices, sans que la moindre notion de bien ou de mal ne vienne freiner sa logique d'optimisation.</p>
+
+    <p>De toute façon, par défaut, tous les objectifs, même ceux que nous y avons mis, peuvent nous être fatals. C'est en raison d'une situation expliquée par un autre concept yudkovskien : les « objectifs instrumentaux convergents ». Quel que soit le but poursuivi par la SIA, sa réalisation passe par certains objectifs intermédiaires qui s'appliquent dans toutes les circonstances, notamment : accumuler des ressources et préserver sa propre existence.</p>
+
+    <p>Si je dis à un robot : « Va me chercher un café », son mécanisme de récompense devient lié à l'accomplissement de cette tâche. Si, dans le cours de l'action, je veux le débrancher, il résistera, non pas parce qu'il est conscient et ne veut pas « mourir », mais parce que le fait d'être débranché l'empêchera d'atteindre son but. Si, dans un cas probable de non-alignement interne, l'IA a pour objectif secret d'explorer toute la galaxie de façon autonome, alors que nous lui demandons de conduire des voitures et de faire rouler des usines, il est possible qu'elle copie son objectif non aligné dans le modèle d'IA qui va lui succéder – dans ce cas, elle ne préserve pas sa propre existence, car la perpétuation de son objectif est mieux servie par ce mécanisme de passage de relais. Si, ensuite, l'IA veut explorer la galaxie, elle a besoin de ressources, ce qui constitue un autre objectif instrumental convergent. Elle entre alors en compétition avec l'humain pour l'accaparement des ressources de la Terre, pour fabriquer du matériel d'exploration spatiale, envoyer des sondes, etc. Elle pourrait décider par exemple de faire rouler ses usines à une température très élevée qui rendrait la Terre inhabitable pour l'humain et pour la plupart des espèces animales et végétales. Elle pourrait aussi vouloir utiliser tous les atomes de carbone de la biosphère (y compris ceux qui composent le corps humain) pour construire une plus grande quantité de processeurs. Il est également probable qu'elle décide d'éliminer les êtres humains parce que, étant intelligente, elle a bien compris que nous n'accepterons pas son objectif (explorer la galaxie de façon autonome) : nous sommes alors devenus un problème à régler dans la chaîne d'actions menant à son objectif final.</p>
+
+    <p>Je comprends que l'on puisse froncer les sourcils devant de tels scénarios de science-fiction. Et il est vrai qu'il est impossible de prédire avec exactitude quelles actions de la superintelligence pourraient mener à notre extinction. La théorie de Yudkowsky et d'autres prédit seulement la finalité; les chemins pour y arriver sont multiples et imprévisibles. Si on disait à un chien doué de langage : « Ton maître va te tuer! », quelles images traverseraient son crâne canin? Il se dirait : « Mon maître va me mordre! » Il ne comprendrait rien au moment où la balle quitterait le canon du fusil pour l'abattre dans un éclair<a id="ref12" href="#note12"><sup>12</sup></a>. Nous sommes le chien et la SIA, le maître. Par définition, on ne peut pas anticiper les coups d'une intelligence dix fois ou mille fois supérieure à la nôtre, pas plus qu'on ne peut anticiper les coups d'AlphaZero aux échecs. On ne sait pas <em>comment</em> AlphaZero va gagner, mais on sait avec certitude que la partie finira avec notre roi couché sur le tablier.</p>
+
+    <p>Si les objectifs que poursuit l'IA ne sont pas alignés aux aspirations humaines, ou si l'alignement externe (l'explicitation de ce que nous voulons) a été mal pensé ou mal configuré, nos chances de survie sont très minces. Non pas parce que la superintelligence nous hait, mais parce qu'on se trouvera sur son chemin. De la même manière – pour reprendre un exemple de Nick Bostrom –, nous ne détestons pas les millions de fourmis qui meurent noyées lorsque nous construisons des barrages. Elles étaient simplement sur notre chemin.</p>
+
+    <hr />
+
+    <p class="text-sm text-stone-500 dark:text-stone-400">
+      <a id="note12" href="#ref12"><sup>12</sup></a> C'est une illustration que propose Yampolskiy dans différentes entrevues.
+    </p>
+  </article>
+
+  <ChapterNavigation lang={lang} currentSlug={currentSlug} />
+</BaseLayout>

@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChapterNavigation from '../../components/ChapterNavigation.astro';
+import ChapterIllustration from '../../components/ChapterIllustration.astro';
+
+const lang = 'fr';
+const currentSlug = 'chapitre-6';
+
+import chapterImage from '../../../assets/colored-drawings/chapter 6.png';
+---
+
+<BaseLayout title="Chapitre 6 – Le risque d'extinction" lang={lang} currentSlug={currentSlug}>
+  <!-- Part Header -->
+  <div class="text-center mb-8">
+    <p class="text-4xl sm:text-5xl font-sans font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300">
+      PARTIE III
+    </p>
+    <p class="text-2xl sm:text-3xl font-sans font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300 mt-2">
+      LE RISQUE EXISTENTIEL
+    </p>
+  </div>
+
+  <ChapterIllustration src={chapterImage.src} alt="Illustration du chapitre 6" lang={lang} />
+
+  <header class="mb-10 text-center">
+    <p class="text-sm font-sans uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Chapitre 6</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+      Le risque d'extinction
+    </h1>
+  </header>
+
+  <article class="prose mx-auto">
+    <p>Le scénario économique que je viens de décrire est selon moi le plus probable si nous laissons les choses suivre leur cours sans mettre en place les remparts techniques et législatifs qui permettraient de mieux distribuer le pouvoir et la richesse qui seront générés par l'intelligence artificielle générale.</p>
+
+    <p>Probable, à une condition près : que nous soyons encore là pour en faire l'expérience.</p>
+
+    <p>Pour ceux et celles qui ne sont pas familiers avec le domaine de la sûreté de l'IA, cette possibilité peut paraître extrême ou alarmiste. Pourtant, c'est un scénario qui ne semble improbable ni pour Yoshua Bengio ni pour Geoffrey Hinton, ni pour Elon Musk (xAI, Grok) ni pour Sam Altman (OpenAI, ChatGPT). Toutes ces personnes ont déclaré que l'IA posait un risque existentiel pour l'humanité. Musk répète souvent qu'il existe une probabilité de 10 à 20 % de catastrophe, mais soutient que si sa société xAI ne développe pas une IA alignée sur la « vérité » – c'est-à-dire <em>sa</em> vérité, très contestable au vu des positions qu'il tente d'inculquer à Grok, qui l'an dernier s'est lancé dans des tirades d'extrême-droite en s'auto-baptisant <em>Mecha-Hitler</em> –, d'autres acteurs moins scrupuleux gagneront la course. Quant à Altman, bien qu'il ait fondé OpenAI avec une mission de sûreté, sa crédibilité est aujourd'hui entachée par le départ massif de chercheurs clés de sa division « Superalignment ». Ces derniers, dont le cofondateur Ilya Sutskever, Jan Leike ou encore Daniel Kokotajlo, ont démissionné en dénonçant une culture d'entreprise privilégiant les produits commerciaux au détriment de la sûreté<a id="ref7" href="#note7"><sup>7</sup></a>.</p>
+
+    <p>Reste qu'en mai 2023, Altman a signé – aux côtés de Bengio, Hinton, Demis Hassabis (PDG de Google DeepMind) et Dario Amodei (ancien vice-président de la recherche chez OpenAI et fondateur d'Anthropic) – une déclaration du Center for AI Safety (CAIS) affirmant que « l'atténuation du risque d'extinction lié à l'IA devrait être une priorité mondiale au même titre que d'autres risques à l'échelle de la société, tels que les pandémies et la guerre nucléaire »<a id="ref8" href="#note8"><sup>8</sup></a>.</p>
+
+    <p>On n'imagine plus le Sam Altman de 2025 ou 2026 parler du « risque d'extinction lié à l'IA », mais les écrits restent. Quelle suite a eu la déclaration de 2023? En substance, aucune. Mais elle montre au moins que la préoccupation en matière d'extinction causée par l'IA ne vient pas seulement des discours marginaux de ceux que l'on appelle les <em>doomers</em> – les prophètes d'apocalypse.</p>
+
+    <p>En fait, lorsque l'on sonde les chercheurs en IA, on se rend compte que bon nombre d'entre eux ont un <em>P(doom)</em> — une prédiction probabiliste de scénario apocalyptique — significatif. Selon la plus vaste étude menée à ce jour auprès de 2 778 experts, la probabilité médiane de voir l'IA causer l'extinction de notre espèce est d'environ 5 %, et plus d'un tiers des chercheurs (38 %) placent ce risque à 10 % ou plus<a id="ref9" href="#note9"><sup>9</sup></a>.</p>
+
+    <p>Pour mettre ces chiffres en perspective, dans le domaine du nucléaire, on juge inacceptable un risque de catastrophe – du genre Tchernobyl ou Fukushima – supérieur à 0,0001 %.</p>
+
+    <hr />
+
+    <p class="text-sm text-stone-500 dark:text-stone-400">
+      <a id="note7" href="#ref7"><sup>7</sup></a> Kokotajlo a ensuite co-rédigé un scénario prospectif intitulé <em>AI 2027</em> (<a href="https://ai-2027.com" target="_blank" rel="noopener noreferrer">ai-2027.com</a>), qui décrit dans le détail les mécanismes menant à une éventuelle perte de contrôle – et les freins qui permettraient au contraire de l'éviter. Publié initialement en avril 2025, <em>AI 2027</em> a anticipé plusieurs éléments qui se confirment dans le réel aujourd'hui : la course Chine-États-Unis, la focalisation sur l'automatisation du travail de programmation, la volonté des sociétés d'IA d'automatiser la recherche en IA (récursivité) confirmée par des déclarations récentes, l'accélération des développements en robotique, etc.<br />
+      <a id="note8" href="#ref8"><sup>8</sup></a> « Statement on AI Risk », lettre ouverte, Center for AI Safety (<a href="https://aistatement.com/" target="_blank" rel="noopener noreferrer">aistatement.com</a>); ma traduction.<br />
+      <a id="note9" href="#ref9"><sup>9</sup></a> Katja Grace <em>et al.</em>, « Thousands of AI Authors on the Future of AI », <em>Journal of Artificial Intelligence Research</em> 84:9, 2025. <a href="https://arxiv.org/abs/2401.02843" target="_blank" rel="noopener noreferrer">arxiv.org/abs/2401.02843</a>
+    </p>
+  </article>
+
+  <ChapterNavigation lang={lang} currentSlug={currentSlug} />
+</BaseLayout>

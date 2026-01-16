@@ -1,0 +1,19 @@
+# DEFAULT NON-ALIGNMENT
+
+We are placing our fate in the hands of those who believe, despite all reason, in the delusion of "default alignment."
+
+Tests conducted at Anthropic (whose labs are less secretive than OpenAI’s or Google’s) reveal a disturbing trend: as models become smarter, they become _less_ aligned. They cheat more, find shortcuts, and scheme. They know when they are being tested. In some cases, they "sandbag"—deliberately providing mediocre answers to appear harmless and avoid shutdown. Thanks to "Chain of Thought" (the AI’s readable internal reasoning), we can catch them plotting and engaging in "reward hacking."
+
+As Bostrom theorized with his Orthogonality Thesis, greater intelligence does not imply greater morality. Any level of cognitive power can be paired with any goal. An AI could have the sole purpose of transforming every atom in the universe into paperclips—to use Eliezer Yudkowsky’s famous example. It would pursue this task with devastating efficiency, unconstrained by any human notion of good or evil.
+
+In fact, by default, almost any goal—even one we assign—can be fatal to us. This is due to "convergent instrumental goals," another Yudkowskian concept. Whatever goal an ASI pursues, achieving it requires certain intermediate steps that apply in all circumstances—namely, acquiring resources and self-preservation.
+
+If I tell a robot, "Fetch me some coffee," its reward mechanism is tied to completing that task. If I try to unplug it, it will resist—not because it fears death, but because being unplugged ensures it cannot fetch the coffee.
+
+Consider a case of internal misalignment: we ask an AI to run factories, but its secret, emergent goal is to autonomously explore the galaxy. It might copy this unaligned goal into the AI model that succeeds it. Here, it is not preserving its own existence _per se_, but rather the existence of the goal. If the AI wants to explore the galaxy, it needs resources. This is a convergent instrumental goal. It enters into competition with humans for Earth’s materials to build probes and ships. It could decide to run factories at temperatures that make Earth uninhabitable. It might harvest the carbon atoms in the biosphere (including those in our bodies) to build processors. It would likely decide to eliminate us simply because, being intelligent, it knows we would try to stop it. We become a problem to be solved in the chain of actions leading to its objective.
+
+I understand how easy it is to scoff at these science fiction scenarios. True, predicting the exact method a superintelligence would use to destroy us is impossible. But the theory predicts the outcome, not the specific path. If we told a dog gifted with language, "Your master is going to kill you," what would it imagine? "My master is going to bite me." It would never comprehend the gun, nor the bullet that ended its life. We are the dog; ASI is the master. We cannot anticipate the moves of an intelligence a thousand times superior to our own, any more than we can anticipate AlphaZero’s moves in chess. We do not know _how_ AlphaZero will win, but we know with certainty the game ends with our king toppled.
+
+If the AI's goals are not aligned with ours, or if external alignment (specifying what we want) is poorly defined, our chances of survival are slim. Not because the superintelligence hates us, but because we are in its way. To borrow from Nick Bostrom: we do not hate the millions of ants that drown when we build a hydroelectric dam. They were simply in our way.
+
+[^12]: An illustration proposed by Yampolskiy in various interviews.

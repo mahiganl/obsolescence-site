@@ -1,0 +1,23 @@
+---
+import { t, type Lang } from '../i18n/config';
+
+interface Props {
+  src: string;
+  alt: string;
+  lang: Lang;
+}
+
+const { src, alt, lang } = Astro.props;
+---
+
+<figure class="mb-10">
+  <img
+    src={src}
+    alt={alt}
+    class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+    loading="eager"
+  />
+  <figcaption class="text-center text-sm text-stone-500 dark:text-stone-400 mt-3 italic">
+    {t(lang, 'illustration.caption')}
+  </figcaption>
+</figure>

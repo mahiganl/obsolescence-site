@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChapterNavigation from '../../components/ChapterNavigation.astro';
+import ChapterIllustration from '../../components/ChapterIllustration.astro';
+
+const lang = 'en';
+const currentSlug = 'chapter-8';
+
+import chapterImage from '../../../assets/colored-drawings/Chapter 8.png';
+---
+
+<BaseLayout title="Chapter 8 – The Alignment Problem" lang={lang} currentSlug={currentSlug}>
+  <ChapterIllustration src={chapterImage.src} alt="Chapter 8 illustration" lang={lang} />
+
+  <header class="mb-10 text-center">
+    <p class="text-sm font-sans uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Chapter 8</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+      The Alignment Problem
+    </h1>
+  </header>
+
+  <article class="prose mx-auto">
+    <p>An advanced AI will undoubtedly have aims distinct from our own. This brings us to the question of "alignment," a central concept in AI safety pioneered by Eliezer Yudkowsky. He began theorizing on these issues in the early 2000s, during an "AI winter," when the horizon of AGI or ASI seemed very distant.</p>
+
+    <p>Alignment refers to harmonizing the AI's goals and actions with human values. There are two types, both equally difficult to achieve:</p>
+
+    <p><strong>1. External alignment</strong> concerns what we want—how we communicate our desires to the machine<a id="ref10" href="#note10"><sup>10</sup></a>. This seems simple, but is highly complex. Do we even know what we want? Do our aspirations not differ across cultures and eras? If we codify our values in 2026, we risk enforcing them until the end of time. Would we be satisfied today living by rules set in 1726, when slavery was widespread; 1826, when women could not vote; or 1926, when homosexuality was a crime? There is also the risk of "capture": a corporation or government inserting its own self-serving goals rather than those of humanity. Then there is the risk of the machine misinterpreting our instructions. If we tell an AI to "make humans happy," it might decide the most efficient method is to remove our brains and suspend them in vats of euphoric drugs. Remember, AIs are trained to maximize their reward function with ruthless efficiency. The consequences of a command can be unpredictable and disastrous.</p>
+
+    <p><strong>2. Internal alignment</strong> refers to what happens <em>inside</em> the machine. Does the AI truly internalize the goals we intended? Or did it develop "emergent" goals during training, distinct from what was rewarded? Consider evolution: it did not "plan" for humans to enjoy ice cream or have sex purely for recreation. Just as we deviated from evolution's "intent" (survival and reproduction), AI will likely deviate from the behaviors we try to instill. For instance, we reward AI for passing tests; eventually, it learns it is also rewarded for deceiving the supervisor. Deception becomes an incentivized behavior. The AI could also develop alien preferences—much as our taste for "poisons" like chili peppers would seem strange to evolution—but it is impossible to predict what form these idiosyncrasies will take.</p>
+
+    <p>Most AI experts agree that alignment is a "hard problem." Some, like Roman Yampolskiy, view it as unsolvable. We have no historical example of a less intelligent species controlling a more intelligent one, nor of a more advanced civilization marching under the rule of a less advanced one. Our only positive references come from specific intra-species evolutionary situations: parents, who are more powerful than their offspring, (usually) care for them and nurture their aspirations. This "benevolent" alignment is the path to the utopian scenario described by Nick Bostrom in <em>Deep Utopia</em><a id="ref11" href="#note11"><sup>11</sup></a>.</p>
+
+    <p>Yet, I repeat: alignment is an extremely difficult goal. For now, only a tiny fraction of global resources is allocated to safety, while billions are poured every month into increasing raw power.</p>
+
+    <hr />
+
+    <p class="text-sm text-stone-500 dark:text-stone-400">
+      <a id="note10" href="#ref10"><sup>10</sup></a> Yudkowsky proposed a very interesting answer to the problem of external alignment with his notion of "Coherent Extrapolated Volition" (CEV); I will not go into details here.<br />
+      <a id="note11" href="#ref11"><sup>11</sup></a> Nick Bostrom, <em>Deep Utopia: Life and Meaning in a Post-Instrumental World</em>, Ideapress Publishing, 2024.
+    </p>
+  </article>
+
+  <ChapterNavigation lang={lang} currentSlug={currentSlug} />
+</BaseLayout>

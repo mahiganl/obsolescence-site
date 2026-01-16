@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Lora', 'Georgia', 'Times New Roman', serif;
+  --font-sans: 'Inter', 'system-ui', sans-serif;
+
+  --color-bg-light: #fafaf9;
+  --color-bg-dark: #0f0f0f;
+  --color-text-light: #1c1917;
+  --color-text-dark: #e7e5e4;
+  --color-accent: #78716c;
+  --color-accent-hover: #57534e;
+  --color-border-light: #e7e5e4;
+  --color-border-dark: #292524;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-serif);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Support both html.dark and body.dark for Tailwind compatibility */
+  html.dark body,
+  body.dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+  }
+
+  /* Prose styling for long-form reading */
+  .prose {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    max-width: 65ch;
+  }
+
+  .prose p {
+    margin-bottom: 1.5em;
+  }
+
+  .prose em {
+    font-style: italic;
+  }
+
+  .prose strong {
+    font-weight: 600;
+  }
+
+  .prose a {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .prose a:hover {
+    color: var(--color-text-light);
+  }
+
+  html.dark .prose a,
+  body.dark .prose a {
+    color: #d6d3d1;
+  }
+
+  html.dark .prose a:hover,
+  body.dark .prose a:hover {
+    color: white;
+  }
+
+  .prose hr {
+    border: none;
+    border-top: 1px solid var(--color-border-light);
+    margin: 2em 0;
+  }
+
+  html.dark .prose hr,
+  body.dark .prose hr {
+    border-top-color: var(--color-border-dark);
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3 {
+    color: var(--color-text-light);
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+  }
+
+  html.dark .prose h1,
+  html.dark .prose h2,
+  html.dark .prose h3,
+  body.dark .prose h1,
+  body.dark .prose h2,
+  body.dark .prose h3 {
+    color: #f5f5f4;
+  }
+
+  /* Force light titles in dark mode for all headings */
+  html.dark h1,
+  html.dark h2,
+  html.dark h3,
+  body.dark h1,
+  body.dark h2,
+  body.dark h3 {
+    color: #fafaf9 !important;
+  }
+
+  /* Footnotes - lighter in dark mode */
+  .prose .text-sm.text-stone-500 {
+    color: #78716c;
+  }
+
+  html.dark .prose .text-sm.text-stone-500,
+  body.dark .prose .text-sm.text-stone-500 {
+    color: #a8a29e !important;
+  }
+
+  /* Chapter label (Chapitre X) - lighter in dark mode */
+  html.dark .text-stone-500,
+  body.dark .text-stone-500 {
+    color: #a8a29e !important;
+  }
+
+  html.dark .text-stone-400,
+  body.dark .text-stone-400 {
+    color: #d6d3d1 !important;
+  }
+
+  html.dark .text-stone-600,
+  body.dark .text-stone-600 {
+    color: #a8a29e !important;
+  }
+
+  .prose ul {
+    padding-left: 1.5em;
+    margin-bottom: 1.5em;
+    list-style-type: disc;
+  }
+
+  .prose ol {
+    padding-left: 1.5em;
+    margin-bottom: 1.5em;
+    list-style-type: decimal;
+  }
+
+  .prose li {
+    margin-bottom: 0.5em;
+  }
+
+  .prose li::marker {
+    color: var(--color-text-light);
+  }
+
+  html.dark .prose li::marker,
+  body.dark .prose li::marker {
+    color: var(--color-text-dark);
+  }
+}
+
+/* Sidebar styling */
+.sidebar-bg {
+  background-color: #f5f5f4;
+}
+
+html.dark .sidebar-bg,
+body.dark .sidebar-bg {
+  background-color: #1c1917;
+}
+
+.sidebar-title {
+  color: #1c1917;
+}
+
+html.dark .sidebar-title,
+body.dark .sidebar-title {
+  color: #fafaf9;
+}
+
+.sidebar-part-title {
+  color: #44403c;
+}
+
+.sidebar-part-title:hover {
+  color: #1c1917;
+}
+
+html.dark .sidebar-part-title,
+body.dark .sidebar-part-title {
+  color: #d6d3d1;
+}
+
+html.dark .sidebar-part-title:hover,
+body.dark .sidebar-part-title:hover {
+  color: #fafaf9;
+}
+
+/* View Transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.2s;
+}

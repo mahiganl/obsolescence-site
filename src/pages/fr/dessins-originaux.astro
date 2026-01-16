@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t } from '../../i18n/config';
+
+const lang = 'fr';
+const currentSlug = 'dessins-originaux';
+
+// Import all original drawings
+const drawings = await Astro.glob('../../../assets/original-drawings/*.{png,jpg,jpeg}');
+---
+
+<BaseLayout title={t(lang, 'gallery.title')} lang={lang} currentSlug={currentSlug}>
+  <!-- Page Header -->
+  <header class="mb-10 text-center">
+    <h1 class="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-100 leading-tight mb-4">
+      {t(lang, 'gallery.title')}
+    </h1>
+    <p class="text-lg text-stone-600 dark:text-stone-300 max-w-2xl mx-auto">
+      {t(lang, 'gallery.description')}
+    </p>
+  </header>
+
+  <!-- Gallery Grid -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {drawings.map((drawing) => {
+      // Extract filename for alt text
+      const filename = drawing.default.src.split('/').pop()?.replace(/\.[^/.]+$/, '') || 'Dessin original';
+      const cleanName = decodeURIComponent(filename).replace(/_/g, ' ').replace(/\..*$/, '');
+
+      return (
+        <figure class="group relative aspect-square overflow-hidden rounded-lg bg-stone-100 dark:bg-stone-800">
+          <img
+            src={drawing.default.src}
+            alt={cleanName}
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+          />
+        </figure>
+      );
+    })}
+  </section>
+
+  <!-- Back Link -->
+  <div class="mt-12 text-center">
+    <a
+      href={`/${lang}/introduction`}
+      class="inline-flex items-center gap-2 text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 transition-colors font-sans"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+      Retour à l'introduction
+    </a>
+  </div>
+</BaseLayout>

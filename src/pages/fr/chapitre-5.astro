@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChapterNavigation from '../../components/ChapterNavigation.astro';
+import ChapterIllustration from '../../components/ChapterIllustration.astro';
+
+const lang = 'fr';
+const currentSlug = 'chapitre-5';
+
+import chapterImage from '../../../assets/colored-drawings/chapter 5.png';
+---
+
+<BaseLayout title="Chapitre 5 – La faiblesse du nombre" lang={lang} currentSlug={currentSlug}>
+  <ChapterIllustration src={chapterImage.src} alt="Illustration du chapitre 5" lang={lang} />
+
+  <header class="mb-10 text-center">
+    <p class="text-sm font-sans uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Chapitre 5</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+      La faiblesse du nombre
+    </h1>
+  </header>
+
+  <article class="prose mx-auto">
+    <p>On me dira que je brosse un portrait très sombre de l'avenir. C'est vrai. Mais cette vision repose sur quelques affirmations qui me semblent difficiles à réfuter. Repassons-les en revue :</p>
+
+    <ol>
+      <li>L'IA que l'on connaît aujourd'hui est un encore outil, mais le but avoué des entreprises de pointe est de créer une intelligence artificielle générale (IAG) qui prendra la forme d'agents capables d'accomplir toutes les tâches que les humains peuvent faire – celles des métiers intellectuels d'abord, mais bientôt, grâce à la robotique, celles des métiers manuels également.</li>
+      <li>La plupart des chercheurs en IA s'entendent pour dire qu'on arrivera à l'IAG d'ici le tournant des années 2030, soit d'ici cinq ans environ; d'autres parlent de 2035 ou 2045, ce qui ne nous laisserait tout de même que 10 ou 20 ans.</li>
+      <li>La valeur économique de l'humain tombera alors à zéro ou en deçà; nous serons devenus obsolètes.</li>
+      <li>Le but des entreprises est de maximiser les profits, et donc, ne serait-ce qu'en raison de la concurrence, le remplacement des humains par des agents IA plus efficaces, plus rapides et moins chers est irrésistible.</li>
+      <li>Les facteurs incitatifs qui soutiennent le bien-être des populations n'existant plus, il est peu probable que les puissants prennent soin de nous par bonté de cœur.</li>
+      <li>Même si les pays détenteurs de l'IA (les États-Unis et la Chine) mettaient en place des programmes de revenu de base universel (RBU), les autres pays de la planète, non moins ravagés par la révolution IA, n'y auraient pas accès et plongeraient dans la misère.</li>
+    </ol>
+
+    <p>Le Canada ne sera pas plus épargné que n'importe quel autre pays du monde. Même si une grande partie de la recherche qui a mené à la percée des modèles de langage de grande taille (LLM) a été menée ici, nous ne possédons pas à ce jour de systèmes de pointe ni d'infrastructures souveraines en IA. À ce titre, nous serons probablement à la merci des puissants américains ou chinois, comme tous les autres pays de la planète.</p>
+
+    <p>Il y aura des révoltes, des manifestations, des grèves, peut-être même des tentatives de révolution. Mais ce sont des instruments du monde d'avant : ce sera comme aller à la guerre avec des tire-pois. Les soulèvements de masse ne sont efficaces que lorsque les citoyens possèdent des leviers, et ces leviers sont arrimés soit à la valeur économique – la grève stoppe l'activité, ce qui déplaît aux détenteurs du capital –, soit à la force du nombre, qui peut constituer une menace contre la sécurité des puissants, qui préfèrent généralement que leur tête reste soudée à leur poitrail. Or, avec l'accélération de l'implémentation de l'IA et des robots dans l'armée et la police (processus déjà en cours aux États-Unis avec le projet Stargate et l'initiative Replicator), la menace du nombre deviendra sans doute une relique du passé. Le précepte d'Étienne de La Boétie selon lequel c'est <em>nous</em>, le peuple, qui conférons au dictateur son pouvoir, et <em>nous</em> qui pouvons le lui reprendre, sera rendu caduc.</p>
+
+    <p>Ceux qui réfléchissent sérieusement à la question de la rupture économique de l'IA avancent parfois des pistes de solution qui pourraient permettre d'éviter le scénario noir par défaut. Drago et Laine (en s'inspirant quelque peu des idées de Vitalik Buterin, le créateur d'Ethereum) suggèrent de construire des systèmes IA décentralisés, y compris dans le domaine de la robotique (ce qui s'appelle « Decentralized robotics »). Emad Mostaque, pour sa part, propose de repenser complètement le système monétaire à l'échelle mondiale, qui comprendrait désormais deux devises, dont l'une qui, au lieu d'être générée par la dette comme c'est le cas actuellement, serait générée par le fait d'être un être humain. Ainsi, selon le scénario idéal de Mostaque (qui, soit dit en passant, n'est pas un idéaliste : il juge les scénarios catastrophe très probables), la valeur de la vie humaine serait préservée et chacun posséderait une IA personnelle qui accomplirait en son nom des actions dans les sphères économique et civique.</p>
+
+    <p>Ce sont là, me semble-t-il, des pistes de réflexion intéressantes. Je ne les approfondirai pas ici, car mon objectif est d'abord de mettre le doigt sur le problème. Nous sommes à un moment de l'histoire où il nous faut nous réveiller et prendre conscience du danger. Alors seulement pourrons-nous trouver ensemble des solutions au défi sans précédent qui se dresse devant nous.</p>
+
+    <p>Chez tous ceux et celles qui se penchent sur la question de l'IA et de l'horizon de l'IAG, qu'ils soient optimistes ou inquiets, il existe un constat partagé : le monde sera complètement transformé. Nous humains, nous apprenons par expérience, nous savons lire les continuités, mais nous sommes mal équipés pour appréhender les ruptures. Or, aujourd'hui, il nous faut absolument saisir la discontinuité qui vient, car une fois que la machine sera en marche, nous perdrons toute possibilité de l'arrêter ou d'agir sur elle.</p>
+  </article>
+
+  <ChapterNavigation lang={lang} currentSlug={currentSlug} />
+</BaseLayout>

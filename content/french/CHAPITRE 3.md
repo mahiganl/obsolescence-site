@@ -1,0 +1,22 @@
+# LE GRAND DÉCLASSEMENT
+
+Le premier risque dont je parlerai, c’est celui de la rupture économique.
+
+Ce risque est souvent caricaturé dans les médias avec des variations sur le thème : « Est-ce que l’IA va voler nos jobs? » Sur ce sujet, on entend souvent des commentateurs répliquer : « Ce sera comme avec toutes les nouvelles inventions. L’IA va éliminer certains emplois et en créer d’autres. Entre-temps, des gens vont souffrir. Certains n’arriveront pas à s’adapter à cette nouvelle réalité et ils seront remplacés par ceux qui sauront utiliser l’IA ou qui acquerront les qualifications nécessaires pour occuper les nouveaux emplois. » À mon avis, en disant cela, on plaque un logiciel désuet sur une émergence qu’on peine à saisir.
+
+On aurait eu raison à tout autre moment de l’histoire, mais dans le cas qui nous occupe, il y a une différence majeure. La plupart des chercheurs du domaine s’entendent pour dire que l’IAG – une intelligence artificielle capable d’accomplir toutes les tâches aussi bien que la plupart des êtres humains – sera parmi nous dans un horizon de deux à 10 ans; quelques voix parlent de 15 ou 20 ans. Le gros de la distribution prédictive se masse autour d’un horizon de cinq ans environ.
+
+Il y a des débats sur ce qu’est véritablement l’IAG. Je ne crois pas que ces discussions soient très fécondes. La question est la suivante : disposera-t-on d’une IA capable d’accomplir énormément de tâches aussi bien, sinon mieux qu’un humain, et de manière plus rapide et moins chère en plus? À cela, la réponse est très probablement : oui. Et à mon avis, les effets se feront sentir bien avant la fin de la décennie, dès la seconde moitié de 2026 ou quelque part en 2027. L’un des ingrédients qui font défaut aux IA actuelles, c’est la capacité d’accomplir des tâches sur le temps long, c’est-à-dire de ne pas perdre le fil d’un projet sur la durée d’une journée, d’une semaine ou d’un mois.
+
+Or, depuis 2023, l’horizon temporel des IA double tous les sept à neuf mois. À ce rythme, on prévoit qu’elles atteindront le niveau humain entre 2027 et 2030.
+
+Une IAG n’est pas un outil. C’est un système qui peut accomplir des tâches de façon autonome en prenant des décisions et en établissant une suite d’actions menant à la réalisation d’un objectif. Ainsi, lorsque l’on dit que de nouveaux emplois seront créés, il y a une faille dans l’argumentaire : et pourquoi l’IA n’occuperait-elle pas également ces nouveaux emplois? C’est comme une montée rapide des eaux : ceux qui sont dans la vallée se noient immédiatement, d’autres se réfugient sur les hauteurs. Mais la mer continue à monter, et à la fin, elle avale même ceux qui ont cherché refuge au sommet de la montagne.
+
+À ce sujet, il faut lire le papier « The Intelligence Curse » de Luke Drago et Rudolf Laine[^3], qui explique comment l’IA agentique induira une « pyramide de remplacement », en commençant par les postes au bas de l’échelle (selon certaines données, les *entry-level jobs* sont déjà touchés aux États-Unis, au moment où j’écris cet essai), puis en balayant les employés junior, les cadres intermédiaires et la haute direction (dans certains cas, même la direction générale – la *C-Suite* – serait remplacée, ce qui engendrerait des sociétés « tout-IA »).
+
+Drago et Laine décrivent bien les mécanismes d’incitation et de compétition qui rendront très difficile, voire impossible toute résistance contre cette vague de remplacement, puisque les agents IA seront plus efficaces, plus rapides et moins chers que les employés humains.
+
+Les humains seront déclassés. Ils deviendront économiquement obsolètes. Leur valeur ne sera pas seulement nulle; elle sera négative, comme le dit Emad Mostaque dans *The Last Economy*[^4]. Maintenir un humain à l’emploi exigera de la part des entreprises des dépenses additionnelles pour une productivité moindre. Au-delà du salaire, il y a ce que Mostaque appelle « le fossé métabolique » : là où le travail humain nécessite abri, calories, sommeil et soins, les IA ne réclament qu’électricité et puissance de calcul. Qui plus est, depuis 2023, le prix de l’intelligence est passé de 37,50 $ à environ 0,14 $ par million de jetons (pour une performance équivalente à GPT-4), une chute de 99,7 % qui ne semble pas vouloir s’arrêter.
+
+[^3]: Luke Drago et Rudolf Laine, « The Intelligence Curse », avril 2025, intelligence-curse.ai (page consultée le 19 décembre 2025).
+[^4]: Emad Mostaque, *The Last Economy: A Guide to the Age of Intelligent Economics*, Intelligent Internet, 2025.

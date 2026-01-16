@@ -1,0 +1,47 @@
+---
+import { getAdjacentChapters, t, type Lang } from '../i18n/config';
+
+interface Props {
+  lang: Lang;
+  currentSlug: string;
+}
+
+const { lang, currentSlug } = Astro.props;
+const { prev, next } = getAdjacentChapters(lang, currentSlug);
+---
+
+<nav class="mt-12 pt-8 border-t border-stone-200 dark:border-stone-800">
+  <div class="flex items-center justify-between gap-4">
+    {prev ? (
+      <a
+        href={`/${lang}/${prev.slug}`}
+        class="group flex-1 flex flex-col items-start p-4 rounded-lg border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-900 transition-colors"
+      >
+        <span class="text-xs font-sans text-stone-500 dark:text-stone-300 mb-1">
+          {t(lang, 'nav.previous')}
+        </span>
+        <span class="font-medium text-stone-700 dark:text-stone-300 group-hover:text-stone-900 dark:group-hover:text-stone-100 transition-colors">
+          {prev.title}
+        </span>
+      </a>
+    ) : (
+      <div class="flex-1"></div>
+    )}
+
+    {next ? (
+      <a
+        href={`/${lang}/${next.slug}`}
+        class="group flex-1 flex flex-col items-end p-4 rounded-lg border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-900 transition-colors text-right"
+      >
+        <span class="text-xs font-sans text-stone-500 dark:text-stone-300 mb-1">
+          {t(lang, 'nav.next')}
+        </span>
+        <span class="font-medium text-stone-700 dark:text-stone-300 group-hover:text-stone-900 dark:group-hover:text-stone-100 transition-colors">
+          {next.title}
+        </span>
+      </a>
+    ) : (
+      <div class="flex-1"></div>
+    )}
+  </div>
+</nav>

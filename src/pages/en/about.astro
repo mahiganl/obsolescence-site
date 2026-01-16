@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = 'en';
+const currentSlug = 'about';
+
+import authorImage from '../../../assets/about-picture/mahigan lepage.png';
+---
+
+<BaseLayout title="About" lang={lang} currentSlug={currentSlug}>
+  <header class="mb-10 text-center">
+    <h1 class="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+      About
+    </h1>
+  </header>
+
+  <article class="prose mx-auto">
+    <figure class="mb-8">
+      <img
+        src={authorImage.src}
+        alt="Mahigan Lepage"
+        class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg"
+      />
+    </figure>
+
+    <p><strong>Mahigan Lepage</strong> is the author of works situated at the intersection of voice and territory, including <em>Relief</em> (2011, Émile-Nelligan Award), <em>Coulées</em> (2012), <em>Big Bang City: voyages en mégapoles d'Asie</em> (2017), and <em>Peuplement</em> (2021). He also translated Joey Comeau's <em>Overqualified</em> (<em>Surqualifié</em>, 2017). An explorer of digital literature in the 2000s and 2010s (notably with Publie.net), a PhD in Literature, a globetrotter, and an entrepreneur, he works as a conference interpreter for the United Nations. He continues to write while focusing his attention on the societal and cultural vertigo induced by artificial intelligence.</p>
+
+    <p>Website: <a href="https://mahigan.com/" target="_blank" rel="noopener noreferrer">mahigan.com</a></p>
+  </article>
+</BaseLayout>

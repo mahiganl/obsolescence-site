@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChapterNavigation from '../../components/ChapterNavigation.astro';
+import ChapterIllustration from '../../components/ChapterIllustration.astro';
+import { languages, t } from '../../i18n/config';
+
+const lang = 'en';
+const currentSlug = 'introduction';
+const bookTitle = languages[lang].bookTitle;
+
+// Import the illustration
+import introImage from '../../../assets/colored-drawings/introduction.png';
+---
+
+<BaseLayout title="Introduction" lang={lang} currentSlug={currentSlug} hideTitle={true} tagline="Will humans become a thing of the past?">
+  <!-- Essay Title Banner -->
+  <header class="mb-8 text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-stone-900 dark:text-stone-100 leading-tight mb-4">
+      {bookTitle}
+    </h1>
+    <p class="text-lg sm:text-xl text-stone-600 dark:text-stone-300 font-sans">
+      {t(lang, 'intro.author')}
+    </p>
+  </header>
+
+  <!-- Chapter Illustration -->
+  <ChapterIllustration src={introImage.src} alt="Illustration for the introduction" lang={lang} />
+
+  <!-- Chapter Title -->
+  <header class="mb-10 text-center">
+    <p class="text-sm font-sans uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Introduction</p>
+    <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+      Sunsetting Humans?
+    </h2>
+  </header>
+
+  <!-- Chapter Content -->
+  <article class="prose mx-auto">
+    <p>
+      <em>Planned Human Obsolescence</em> is intended as an accessible introduction to the problem of AI safety. This essay is written for readers with no prior knowledge of artificial intelligence. No concept is introduced without explanation; no jargon is used without being defined.
+    </p>
+
+    <p>
+      This text does not claim to present novel ideas. Rather, it aims to serve a useful purpose by synthesizing the most convincing arguments regarding the risks associated with artificial intelligence as it grows in capability.
+    </p>
+
+    <p>
+      Beyond the bubble and the hype, the stated goal of companies like OpenAI, Google, Meta, DeepSeek, or xAI is to create an artificial general intelligence (AGI) capable of performing every task human beings can do—or even an artificial superintelligence (ASI) that would surpass humans in every field.
+    </p>
+
+    <p>
+      The implications of such an invention are staggering. Many experts believe that such an AI—equal or superior to humans—could be here by the end of the decade. It threatens to drive wages below subsistence levels, according to Nobel Prize in Economics Joseph Stiglitz, or to escape our control and even wipe us off the map, according to Nobel Prize in Physics Geoffrey Hinton and Turing Prize recipient Yoshua Bengio.
+    </p>
+
+    <p>
+      These predictions may seem alarmist, but they are reasonable given the nature of Large Language Models (LLMs). These models are "black boxes." While engineers control the architecture and the learning algorithm, they do not program the models they create. They grow them through a process of autonomous adjustment involving billions of parameters.
+    </p>
+
+    <p>
+      AI companies are flying blind, investing staggering sums in raw power and vanishingly little in safety.
+    </p>
+
+    <p>
+      We can no longer leave this issue solely to computer scientists. Advanced AI will affect everyone, without exception. It is time for citizens, workers, artists, writers, philosophers, sociologists, politicians, and diplomats to tackle the problem head-on. We do not need to master every mathematical or algorithmic nuance to grasp the essential fact: a powerful, complex, and opaque intelligence is being created, and it carries enormous risks.
+    </p>
+
+    <p>
+      Drawing on the work of several thinkers, I address two crucial risks here.
+    </p>
+
+    <p>
+      The first is economic: the "Great Relegation"—the obsolescence of the human worker, whose value would become negative compared to much cheaper and more efficient AI agents.
+    </p>
+
+    <p>
+      The second is existential: the alignment problem. Will a superintelligence pursue goals compatible with our survival?
+    </p>
+
+    <p>
+      If the picture seems bleak, it is because the risks are real. I do not have ready-made answers; we must find paths to solutions together. It is up to us—not a handful of billionaires and the leaders they influence—to decide what shape our societies and our planet will take in the Age of Intelligence.
+    </p>
+
+    <hr />
+
+    <p>
+      <em>All drawings accompanying this article were created by Mahigan Lepage and colored using Nano Banana Pro. To view the original grayscale drawings, <a href="/en/original-drawings">click here</a>.</em>
+    </p>
+  </article>
+
+  <!-- Chapter Navigation -->
+  <ChapterNavigation lang={lang} currentSlug={currentSlug} />
+</BaseLayout>

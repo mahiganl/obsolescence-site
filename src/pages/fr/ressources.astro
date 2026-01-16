@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChapterNavigation from '../../components/ChapterNavigation.astro';
+
+const lang = 'fr';
+const currentSlug = 'ressources';
+---
+
+<BaseLayout title="Ressources" lang={lang} currentSlug={currentSlug}>
+  <header class="mb-10 text-center">
+    <h1 class="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+      Ressources
+    </h1>
+  </header>
+
+  <article class="prose mx-auto">
+    <h2>Chaînes YouTube</h2>
+
+    <ul>
+      <li><strong>Lethal Intelligence</strong>, <a href="https://youtube.com/@lethal-intelligence" target="_blank" rel="noopener noreferrer">youtube.com/@lethal-intelligence</a> : Vidéos très accessibles et explicatives. Excellente introduction.</li>
+      <li><strong>Le Futurologue</strong>, <a href="https://youtube.com/@LeFuturologue" target="_blank" rel="noopener noreferrer">youtube.com/@LeFuturologue</a> : Débats et entrevues en français.</li>
+      <li><strong>Doom Debates</strong>, <a href="https://youtube.com/@DoomDebates" target="_blank" rel="noopener noreferrer">youtube.com/@DoomDebates</a> : Débats et entrevues en anglais.</li>
+      <li><strong>Sénateur Bernie Sanders</strong>, <a href="https://youtube.com/@SenatorSanders" target="_blank" rel="noopener noreferrer">youtube.com/@SenatorSanders</a> : Voir notamment son entrevue avec Geoffrey Hinton et sa vidéo « The Threats from AI Are Real ».</li>
+      <li><strong>The Diary of a CEO</strong>, <a href="https://youtube.com/@TheDiaryOfACEO" target="_blank" rel="noopener noreferrer">youtube.com/@TheDiaryOfACEO</a> : Voir notamment ses entrevues avec Yoshua Bengio, Tristan Harris ou Roman Yampolskiy.</li>
+    </ul>
+
+    <h2>Articles / Sites web</h2>
+
+    <ul>
+      <li>Drago, Luke et Rudolf Laine, <strong>« The Intelligence Curse »</strong>, avril 2025, <a href="https://intelligence-curse.ai" target="_blank" rel="noopener noreferrer">intelligence-curse.ai</a>.</li>
+      <li>Duvenaud, David, <strong>« Better at Everything: How AI Could Make Human Beings Irrelevant »</strong>, <em>The Guardian</em>, 4 mai 2025.</li>
+      <li>Kokotajlo, Daniel, Scott Alexander, Thomas Larsen, Eli Lifland et Romeo Dean, <strong>« AI 2027 »</strong>, <a href="https://ai-2027.com" target="_blank" rel="noopener noreferrer">ai-2027.com</a>.</li>
+      <li><strong>Loi Zéro / Law Zero</strong>, <a href="https://lawzero.org" target="_blank" rel="noopener noreferrer">lawzero.org</a>.</li>
+    </ul>
+
+    <h2>Livres</h2>
+
+    <ul>
+      <li>Bostrom, Nick, <strong><em>Superintelligence: Paths, Dangers, Strategies</em></strong>, Oxford, Oxford University Press, 2014.</li>
+      <li>Bostrom, Nick, <strong><em>Deep Utopia: Life and Meaning in a Post-Instrumental World</em></strong>, Ideapress Publishing, 2024.</li>
+      <li>Mostaque, Emad, <strong><em>The Last Economy: A Guide to the Age of Intelligent Economics</em></strong>, Intelligent Internet, 2025.</li>
+      <li>Yudkowsky, Eliezer et Nate Soares, <strong><em>If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All</em></strong>, New York, Little, Brown and Company, 2025.</li>
+    </ul>
+  </article>
+
+  <ChapterNavigation lang={lang} currentSlug={currentSlug} />
+</BaseLayout>

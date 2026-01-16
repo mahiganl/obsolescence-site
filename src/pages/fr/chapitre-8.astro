@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChapterNavigation from '../../components/ChapterNavigation.astro';
+import ChapterIllustration from '../../components/ChapterIllustration.astro';
+
+const lang = 'fr';
+const currentSlug = 'chapitre-8';
+
+import chapterImage from '../../../assets/colored-drawings/Chapter 8.png';
+---
+
+<BaseLayout title="Chapitre 8 – Le problème de l'alignement" lang={lang} currentSlug={currentSlug}>
+  <ChapterIllustration src={chapterImage.src} alt="Illustration du chapitre 8" lang={lang} />
+
+  <header class="mb-10 text-center">
+    <p class="text-sm font-sans uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Chapitre 8</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+      Le problème de l'alignement
+    </h1>
+  </header>
+
+  <article class="prose mx-auto">
+    <p>Une IA avancée aura sans doute des visées distinctes des aspirations humaines. On touche ici à la question de « l'alignement », un concept central de la sûreté de l'IA élaboré par le pionnier du domaine, Eliezer Yudkowsky, qui théorisait sur ces questions au début des années 2000, alors que la recherche en IA traversait un long hiver et que l'horizon de l'IAG ou de la SIA semblaient très lointains.</p>
+
+    <p>« Alignement » veut dire harmonisation entre les objectifs et actions de l'IA, d'une part, et les aspirations de l'humanité, de l'autre. Il y a deux types d'alignement, aussi difficiles à atteindre l'un que l'autre :</p>
+
+    <p><strong>1. L'alignement externe</strong> désigne ce que nous voulons, comment nous communiquons, nous humains, nos désirs à la machine<a id="ref10" href="#note10"><sup>10</sup></a>. Cela peut paraître simple, mais en fait, c'est très complexe. Savons-nous nous-même ce que nous désirons? Nos aspirations ne diffèrent-elles pas d'une culture à l'autre et d'une époque à l'autre? Si nous figeons nos volontés en 2026, nous risquons de devoir vivre avec jusqu'à la fin des temps. Serions-nous satisfaits, en 2026, de composer avec des aspirations gravées dans le marbre en 1726, alors que l'esclavage était encore répandu, en 1826, alors que les femmes n'avaient pas le droit de vote, ou en 1926, alors que l'homosexualité était un crime passible de prison dans la plupart des pays occidentaux? Il y a aussi le risque d'une capture de l'alignement externe par une société ou un gouvernement qui voudrait y mettre ses propres objectifs intéressés, différents des aspirations de l'humanité dans son ensemble. Sans parler du risque d'une mauvaise interprétation, par la machine, de la valeur que nous y avons implantée. Par exemple, si nous disons à l'IA : « Rends les êtres humains heureux », il est possible qu'elle juge que la manière la plus efficace d'accomplir cela est d'extraire les cerveaux de nos crânes et de les faire baigner dans des solutions comprenant diverses drogues euphorisantes. Il ne faut pas oublier que les IA sont entraînées pour maximiser leur fonction de récompense en atteignant des objectifs avec une efficacité redoutable. À ce titre, les conséquences d'une commande ou d'une valeur communiquée à l'IA peuvent être imprévisibles et funestes.</p>
+
+    <p><strong>2. L'alignement interne</strong>, pour sa part, désigne l'harmonisation qui a lieu dans la machine. Est-ce que l'IA épouse véritablement les objectifs qu'on a voulu implanter dans ses réseaux de neurones artificiels? Ou est-ce que, pendant son entraînement, elle a plutôt développé des objectifs dits « émergents », distincts de ceux qui étaient récompensés – de la même manière que l'évolution n'avait pas « prévu » que nous, humains, aimerions la crème glacée ou aurions des relations sexuelles pour le simple plaisir de l'acte. Tout comme nous avons dévié de ce que l'évolution a « voulu » mettre en nous (des mécanismes de survie et de reproduction), il est très probable que l'IA dévie des comportements que nous avons voulu lui instiller. Par exemple, en entraînement, on récompense l'IA lorsqu'elle réussit des tests; or, elle finit par comprendre qu'elle est également récompensée lorsqu'elle trompe le superviseur. La tromperie devient ainsi un comportement non aligné. L'IA pourrait aussi développer des goûts qui nous paraîtront très étranges – un peu comme notre goût pour ces « poisons » que sont les piments forts ou certaines épices paraîtrait étrange à l'évolution –, mais il est impossible de prévoir quelle forme prendront ces idiosyncrasies.</p>
+
+    <p>La majorité des experts en intelligence artificielle s'entendent pour dire que l'alignement est un problème difficile. Certains, comme Roman Yampolskiy, y voient même un problème insoluble. Nous n'avons aucun exemple, dans l'histoire de la Terre, d'une espèce moins intelligente qui contrôle une espèce plus intelligente, ou d'une civilisation plus avancée qui marche sous la houlette d'une civilisation moins avancée. Les seules références dont nous disposons viennent de situations évolutives particulières et « intra-espèce » : par exemple, la manière dont les parents humains, beaucoup plus puissants que leurs bébés ou leurs enfants, en prennent pourtant soin, se soucient de leurs aspirations (idéalement), etc. C'est ce genre d'alignement « bienveillant » qui mènerait à un scénario utopique dans le genre de ce que Nick Bostrom décrit dans <em>Deep Utopia</em><a id="ref11" href="#note11"><sup>11</sup></a>.</p>
+
+    <p>Or, je le répète, l'alignement est un horizon extrêmement difficile à atteindre et, pour l'heure, seule une infime part des ressources mondiales est allouée à la sûreté, tandis que des milliards sont investis chaque mois pour accroître la puissance pure des modèles.</p>
+
+    <hr />
+
+    <p class="text-sm text-stone-500 dark:text-stone-400">
+      <a id="note10" href="#ref10"><sup>10</sup></a> Yudkowsky a proposé une réponse très intéressante au problème de l'alignement externe avec sa notion de « volonté extrapolée cohérente » (<em>coherent extrapolated volition</em>); je n'entrerai pas dans les détails ici.<br />
+      <a id="note11" href="#ref11"><sup>11</sup></a> Nick Bostrom, <em>Deep Utopia: Life and Meaning in a Post-Instrumental World</em>, Ideapress Publishing, 2024.
+    </p>
+  </article>
+
+  <ChapterNavigation lang={lang} currentSlug={currentSlug} />
+</BaseLayout>

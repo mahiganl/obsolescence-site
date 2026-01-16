@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChapterNavigation from '../../components/ChapterNavigation.astro';
+import ChapterIllustration from '../../components/ChapterIllustration.astro';
+
+const lang = 'fr';
+const currentSlug = 'chapitre-1';
+
+import chapterImage from '../../../assets/colored-drawings/chapter 1.png';
+---
+
+<BaseLayout title="Chapitre 1 – Au-delà de la bulle" lang={lang} currentSlug={currentSlug}>
+  <!-- Part Header -->
+  <div class="text-center mb-8">
+    <p class="text-4xl sm:text-5xl font-sans font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300">
+      PARTIE I
+    </p>
+    <p class="text-2xl sm:text-3xl font-sans font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300 mt-2">
+      LA RUPTURE IA
+    </p>
+  </div>
+
+  <ChapterIllustration src={chapterImage.src} alt="Illustration du chapitre 1" lang={lang} />
+
+  <header class="mb-10 text-center">
+    <p class="text-sm font-sans uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Chapitre 1</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+      Au-delà de la bulle
+    </h1>
+  </header>
+
+  <article class="prose mx-auto">
+    <p>Nous ne parlons pas assez de l'IA.</p>
+
+    <p>Devant la vague d'articles, de reportages et de textes d'opinion portant sur l'intelligence artificielle qui inondent les médias depuis le lancement grand public de ChatGPT en novembre 2022 – une vague devenue tsunami en 2025 –, l'idée que nous ne parlons pas <em>assez</em> de l'IA peut sembler risible. Et pourtant, au vu de ce que nous savons et de ce qui se dessine dans le monde de l'intelligence artificielle, nous devrions en parler beaucoup plus – ou à tout le moins, le faire avec beaucoup plus d'urgence et d'intensité.</p>
+
+    <p>On s'habitue si vite au progrès. Si nous pouvions reculer l'horloge de quelques années et s'entretenir avec le <em>nous</em> de 2021, lui expliquer ce que pourront faire les machines dans cinq ans, il tomberait à la renverse. Cette capacité qu'a maintenant l'IA de rédiger des textes mieux que la plupart des humains, de parler des centaines de langues, de rédiger du code à partir d'instructions formulées en langue naturelle (le <em>vibe coding</em>), de générer des images ou des vidéos de plus en plus réalistes ou sophistiquées à partir d'un simple <em>prompt</em> : c'est la science-fiction devenue réalité.</p>
+
+    <p>Or voilà : à côté des discours des optimistes de la tech, des accélérationnistes, des transhumanistes, des posthumanistes et des techno-messianistes, ou des simples capitalistes qui flairent la bonne affaire, on entend des voix qui, rebutées par toute cette enflure idéologique, se font un devoir de minimiser la révolution IA.</p>
+
+    <p>À première vue, une telle posture peut sembler raisonnable. Il suffit de mentionner les mots anglais <em>slop</em> (la boue médiatique produite en masse au moyen de l'IA, puis déversée sur les réseaux sociaux) ou <em>hype</em> (l'art de faire mousser le produit), de rappeler les hallucinations de l'IA (rappel qui m'évoque le dédain avec lequel on parlait de Wikipédia et de ses inexactitudes au début des années 2000), d'échafauder des théories qui prouvent que « l'IA ne pense pas » (il y a des dizaines de variations sur ce thème), de pointer du doigt certaines bêtises qu'a dites l'IA (heureusement que les humains sont totalement épargnés par ce défaut...), ou de dire que l'IA agentique (celle qui n'est plus enfermée dans une boîte de conversation, mais qui, au contraire, agit dans le monde, prend des décisions et accomplit des actions par elle-même) n'est pas une réalité, mais plutôt un slogan de marketing.</p>
+
+    <p>Cette posture critique, somme toute prudente, me semble passer à côté de la vraie rupture que constituent les récents progrès en intelligence artificielle. C'est une perspective que l'on voit beaucoup chez les universitaires. Pour éviter de se laisser berner par les charlatans, ils démontent les mécanismes qui emballent la machine capitaliste et gonflent la bulle boursière. Or, sous la surface des discours, quelque chose d'extrêmement puissant est en train de prendre forme, qu'on aurait tort d'ignorer.</p>
+
+    <p>Dans la population en général, l'attitude semble différente si on en croit les enquêtes : on minimise beaucoup moins la menace que représente l'IA. Selon une étude de 2025 du Pew Research Center, environ 57 % des Américains estiment que les risques de l'IA pour la société sont « élevés » ou « très élevés », contre seulement 25 % qui y voient des bénéfices élevés. Et 64 % craignent que l'IA ne réduise le nombre d'emplois disponibles au cours des 20 prochaines années<a id="ref1" href="#note1"><sup>1</sup></a>.</p>
+
+    <p>La bulle est sans doute réelle, ce qui ne veut pas dire que la technologie ne sera pas transformatrice. Il n'y a qu'à penser à la bulle .com, qui n'a pas empêché l'Internet de refaçonner nos vies. Lorsqu'une bulle éclate, des conséquences néfastes s'ensuivent, des gens souffrent. Ce sont souvent les classes moyenne et laborieuse qui payent la note, on le sait. Mais dans les circonstances, s'il n'y avait que la bulle, ce serait probablement – j'expliquerai pourquoi – le meilleur des scénarios. Si l'éclatement de la bulle induisait un ressac des capitaux et un ralentissement des progrès, ce serait encore mieux, mais vu l'attitude très compétitive des sociétés et des États qui sont dans la course, il ne s'agirait sans doute que d'un ralentissement passager.</p>
+
+    <p>Il est difficile de saisir le présent au moment où il s'écrit. Tout comme on peut se tromper en minimisant l'incidence d'un changement technologique, on peut se tromper en l'exagérant dans l'instant où il advient. Tout de même, il est difficile, à mon avis, de soutenir que les récents progrès en IA sont d'une importance négligeable, étant donné la manière dont ils transforment déjà nos usages à l'école, au travail, sur le web, etc. La question est de savoir à quelle échelle poser la rupture.</p>
+
+    <hr />
+
+    <p class="text-sm text-stone-500 dark:text-stone-400">
+      <a id="note1" href="#ref1"><sup>1</sup></a> Brian Kennedy <em>et al.</em>, « How Americans View AI and Its Impact on People and Society », rapport du Pew Research Center, 17 septembre 2025.
+    </p>
+  </article>
+
+  <ChapterNavigation lang={lang} currentSlug={currentSlug} />
+</BaseLayout>

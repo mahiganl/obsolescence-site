@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChapterNavigation from '../../components/ChapterNavigation.astro';
+import ChapterIllustration from '../../components/ChapterIllustration.astro';
+
+const lang = 'fr';
+const currentSlug = 'conclusion';
+
+import chapterImage from '../../../assets/colored-drawings/chapter 12.png';
+---
+
+<BaseLayout title="Conclusion – Pour la joie" lang={lang} currentSlug={currentSlug}>
+  <ChapterIllustration src={chapterImage.src} alt="Illustration de la conclusion" lang={lang} />
+
+  <header class="mb-10 text-center">
+    <p class="text-sm font-sans uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Conclusion</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+      Pour la joie
+    </h1>
+  </header>
+
+  <article class="prose mx-auto">
+    <p>J'invite chacun à se familiariser avec les thèses des deux camps et à séparer le grain de l'ivraie. Il est impossible d'arriver à une certitude absolue, mais devant les thèses de l'espoir, difficile de ne pas entretenir à tout le moins un doute raisonnable.</p>
+
+    <p>Le fardeau de la preuve devrait reposer sur les épaules des sociétés de pointe en IA et des gouvernements permissifs; c'est à eux qu'il revient de nous prouver que les chances d'incident majeur sont inférieures à 0,0001 %, soit le seuil de risque maximal fixé pour les réacteurs nucléaires (en vérité, le seuil de risque devrait être beaucoup plus rigoureux dans le cas de l'IA, puisque c'est l'humanité entière qui est en jeu). Si on est d'accord avec la médiane des experts du domaine pour établir le risque à 5 %, est-on prêt à jouer à la roulette russe avec toutes les vies sur Terre? Monteriez-vous dans un avion si vous saviez qu'il y a une chance sur vingt qu'il s'écrase?</p>
+
+    <p>Vous êtes déjà dans cet avion. Il s'apprête à décoller.</p>
+
+    <p>Faut-il mettre le développement sur pause? L'arrêter?<a id="ref13" href="#note13"><sup>13</sup></a> Former une équipe d'élite de superalignement, une sorte de Projet Manhattan pour la sûreté de l'IA? Adopter un traité international pour baliser l'entraînement des modèles, comme on le fait pour l'enrichissement de l'uranium?</p>
+
+    <p>Dans leur récent livre <em>If Anyone Builds It, Everyone Dies</em><a id="ref14" href="#note14"><sup>14</sup></a>, Eliezer Yudkowsky et Nate Soares plaident pour un traité contraignant entre les principaux acteurs de l'IA (la Chine, les États-Unis et le Royaume-Uni – où siège Google DeepMind –, voire la France – où se trouve Mistral AI<a id="ref15" href="#note15"><sup>15</sup></a>). Ce document serait assorti d'une agence de surveillance capable d'imposer des arrêts d'urgence par-delà les frontières. Calqué sur le régime de non-prolifération nucléaire, il établirait des plafonds de puissance de calcul pour les centres de données, au-delà desquels des sanctions — incluant, en dernier recours, des interventions militaires — seraient envisagées pour neutraliser les infrastructures hors-la-loi.</p>
+
+    <p>Yudkowsky et Soares proposent également, en désespoir de cause, que l'on lance d'urgence un projet d'augmentation de l'intelligence humaine chez des sujets adultes. Comme les humains sont alignés par défaut, on créerait ainsi une superintelligence humaine, laquelle saurait sans doute créer une superintelligence artificielle de façon sécuritaire. Vu les progrès rapides en IA, est-ce qu'on aurait le temps d'augmenter les humains avant l'avènement de la SIA? Et c'est sans parler des enjeux éthiques…</p>
+
+    <p>Pour sa part, Yoshua Bengio propose une solution qui demeure dans le champ de l'intelligence artificielle. Avec Loi Zéro, il souhaite créer une IA scientifique capable de prédire et d'empêcher les actions non alignées des IA agentiques. Ce système posséderait également de grandes capacités en recherche scientifique, mais serait dépourvu d'agentivité (le principal facteur de risque). Le pari de Bengio, c'est que les PDG et les décideurs ne sont pas suicidaires. Si on leur propose une solution sûre agissant comme rempart de sécurité autour de leurs IA, ils l'adopteront.</p>
+
+    <p>Nous, dans le grand public, pouvons avoir le sentiment que nous n'avons aucune prise sur les décisions qui se prennent dans les officines des laboratoires et des gouvernements. C'est vrai. Mais si nous lançons tout de suite la conversation dans nos pays, nous pouvons ouvrir la voie. Le risque existentiel pèse sur tous les territoires du monde. Le risque économique également, mais il est plus aigu encore dans les pays qui ne sont pas la Chine ou les États-Unis, car une relation de dépendance quasi-féodale risque de s'installer. Il faut forcer la conversation aux échelons national, régional et international. Vu l'ampleur du risque, il n'est pas normal qu'il n'y ait pas de grands forums sur la sûreté de l'intelligence artificielle à travers le monde, notamment à l'ONU. Il n'est pas normal que les groupes gouvernementaux et civils ne soient pas sur le pied de guerre pour créer des contre-pouvoirs capables de balancer les forces brutes qui sont sur le point d'être déchaînées sur l'ensemble de la planète.</p>
+
+    <p>Aux États-Unis, certains élus commencent à lever la voix, dont le représentant au Congrès Ro Khanna et l'infatigable Bernie Sanders qui, à 84 ans, semble être le politicien qui comprend le mieux les risques associés à l'IA. Sanders s'est entretenu avec Geoffrey Hinton lors d'une assemblée publique sur le sujet et a tenu récemment plusieurs discours pour alerter la population au sujet des risques économiques et existentiels de l'intelligence artificielle. Au cours des prochains mois et des prochaines années, nous aurons besoin d'élu(e)s solides, capables de porter la voix des gens qui demandent une intelligence sûre et citoyenne.</p>
+
+    <p>Si les IA demeurent des outils, si nous les utilisons de façon restreinte, elles peuvent apporter des bienfaits immenses à l'humanité. Mais si nous courons sans retenue vers la généralité et la superintelligence, nous risquons un avenir sombre – ou pas d'avenir du tout –, une situation qui aura été décidée par une poignée de milliardaires animés par l'appât du gain et la promesse de la vie éternelle. Les Peter Thiel de ce monde espèrent pouvoir se téléverser dans le nuage, en une sorte de parodie technologique de l'Apocalypse : un « ravissement » où une poignée d'Élus s'élèverait vers un paradis de silicium, laissant derrière eux une humanité déchue et un monde devenu obsolète.</p>
+
+    <p>Depuis l'invention de la bombe atomique, nous savons que nous pouvons nous autodétruire; nous savons aussi que nous pouvons en décider autrement grâce à la collaboration. Toute découverte scientifique n'est pas souhaitable : qui voudrait des « bactéries miroirs », cette possibilité théorique qui déjouerait les défenses immunitaires et dévorerait toute vie sur Terre? La superintelligence non alignée – c'est-à-dire la superintelligence par défaut – est à ranger dans la même catégorie. Elle risque fort de se comporter à la manière d'un virus : en se dupliquant et en se propageant à une vitesse folle pour maximiser la réalisation d'objectifs qui nous sembleraient absurdes, mais qui seront de la plus haute importance pour l'IA – par exemple, transformer tous les atomes de l'univers en micro-spirales, en computronium<a id="ref16" href="#note16"><sup>16</sup></a> ou en petites lignes de code.</p>
+
+    <p>Nous aurons alors gâché notre dotation cosmique, cet espace-temps théoriquement accessible que nous aurions dû remplir de <em>fun</em>, comme disait Eliezer Yudkowsky, ou de <em>joie</em>, comme le chante aujourd'hui Yoshua Bengio<a id="ref17" href="#note17"><sup>17</sup></a>.</p>
+
+    <p>Nous occupons un petit recoin sombre de l'univers. Si nous éteignons la joie, personne ne volera à notre secours.</p>
+
+    <hr />
+
+    <p class="text-sm text-stone-500 dark:text-stone-400">
+      <a id="note13" href="#ref13"><sup>13</sup></a> Les mouvements PauseAI (<a href="https://pauseai.info" target="_blank" rel="noopener noreferrer">pauseai.info</a>) et StopAI (<a href="https://stopai.info" target="_blank" rel="noopener noreferrer">stopai.info</a>) militent en ce sens.<br />
+      <a id="note14" href="#ref14"><sup>14</sup></a> Eliezer Yudkowsky et Nate Soares, <em>If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All</em>, New York, Little, Brown and Company, 2025.<br />
+      <a id="note15" href="#ref15"><sup>15</sup></a> Il faut bien dire cependant que Mistral AI n'est pas dans la course.<br />
+      <a id="note16" href="#ref16"><sup>16</sup></a> Terme proposé dans les années 90 pour désigner un hypothétique substrat élémentaire pour le traitement de l'information.<br />
+      <a id="note17" href="#ref17"><sup>17</sup></a> Le slogan de son nouvel organisme pour la sûreté de l'IA, Loi Zéro, est : « Préserver la joie et les aspirations humaines ». Site web : <a href="https://lawzero.org" target="_blank" rel="noopener noreferrer">lawzero.org</a>.
+    </p>
+  </article>
+
+  <ChapterNavigation lang={lang} currentSlug={currentSlug} />
+</BaseLayout>

@@ -1,0 +1,17 @@
+# THE INTELLIGENCE EXPLOSION
+
+The "Great Relegation" and extinction scenarios are not mutually exclusive; they could easily unfold sequentially. As we approach AGI—and once we reach it—the vast majority of humans will face obsolescence and economic decline. Then, as AGI gives way to superintelligence, the extinction scenario begins.
+
+Human extinction could also occur years after the advent of ASI, if the superintelligence decides to play its cards close to its chest—quietly manipulating humans, forming emotional bonds (many people already consider their chatbot a friend or romantic partner), and patiently awaiting progress in robotics.
+
+How long is the gap between AGI and ASI? We cannot know for certain, but many believe the transition could happen in the blink of an eye. This is the "foom" hypothesis, named after the sound a rocket makes at liftoff. Once the machine replaces AI researchers, triggering a recursive loop of self-improvement, the process risks spiraling out of control. We could witness what I.J. Good called, in 1965, an "intelligence explosion." From that point on, all bets are off.
+
+This situation is called "the singularity," a term borrowed from black hole physics. In this state, reality becomes strange and unpredictable; the speed of progress surpasses human understanding. We cannot see past the _foom_ horizon.
+
+One thing is certain: once the singularity occurs, we will no longer be in control. This is why ensuring AI safety _before_ liftoff is critical. Yet, right now, we are witnessing a sprint toward general intelligence and superintelligence—an arms race between the United States and China, and between leading corporations. ASI will effectively be a weapon: the most potent instrument of power ever created, far surpassing nuclear arsenals. This race ensures that actors pour limitless resources into raw capabilities while neglecting safety. Unless we quickly correct our trajectory, we are racing toward catastrophe.
+
+There is currently an immense gap between the reality of the risk and the attitude of policymakers. As a conference interpreter for the Economic and Social Commission for Asia and the Pacific (ESCAP), I interpret discussions on sustainability, prosperity, and climate change, yet AI is conspicuously absent from the list of fundamental topics. When it is mentioned, it is almost always to promote national initiatives (AI Hubs, governance integration, etc.), not to warn of the dangers. The UN has created an Advisory Body on AI and adopted the Global Digital Compact, but these diplomatic advances seem woefully insufficient given the urgency. Some experts secretly believe it will take a "warning shot"—a major security incident involving massive loss of life—to shake public opinion and governments from their complacency. I hope we wake up before then.
+
+To reach the halls of power, the conversation must start in our homes, in the streets, and in the media. We must not be intimidated by the subject. Remember: LLMs are black boxes. AI researchers know little more than we do about what is going on inside them.
+
+The conversation belongs to everyone. We cannot allow a few Silicon Valley CEOs or Chinese leaders to decide our future and that of our children. It is time to make our voices heard.

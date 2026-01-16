@@ -1,0 +1,191 @@
+---
+import { languages, chapters, parts, t, type Lang } from '../i18n/config';
+
+interface Props {
+  lang: Lang;
+  currentSlug?: string;
+}
+
+const { lang, currentSlug } = Astro.props;
+const bookTitle = languages[lang].bookTitle;
+const chapterList = chapters[lang];
+const partsList = parts[lang];
+
+// Get chapters by type
+const introChapter = chapterList.find(c => c.slug === 'introduction');
+const conclusionChapter = chapterList.find(c => c.slug === 'conclusion');
+const resourcesChapter = chapterList.find(c => c.slug === (lang === 'fr' ? 'ressources' : 'resources'));
+
+// Get chapters for each part
+function getChaptersForPart(partId: string) {
+  const part = partsList.find(p => p.id === partId);
+  if (!part) return [];
+  return chapterList.filter(c => 'part' in c && c.part === partId);
+}
+
+const specialPages = [
+  { slug: lang === 'fr' ? 'a-propos' : 'about', title: t(lang, 'nav.about') },
+  { slug: lang === 'fr' ? 'dessins-originaux' : 'original-drawings', title: t(lang, 'nav.originalDrawings') }
+];
+---
+
+<!-- Backdrop -->
+<div
+  data-menu-backdrop
+  class="lg:hidden fixed inset-0 z-40 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
+></div>
+
+<!-- Drawer -->
+<div
+  id="mobile-menu"
+  class="lg:hidden fixed inset-y-0 right-0 z-50 w-80 max-w-full bg-stone-50 dark:bg-stone-950 shadow-xl transform translate-x-full transition-transform duration-300 ease-out overflow-y-auto"
+>
+  <div class="p-6">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-lg font-semibold text-stone-900 dark:text-stone-100">
+        {bookTitle}
+      </h2>
+      <button
+        data-menu-close
+        class="p-2 -mr-2 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100"
+        aria-label={t(lang, 'menu.close')}
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <h3 class="text-xs font-sans font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-3">
+        {t(lang, 'nav.toc')}
+      </h3>
+
+      <!-- Introduction -->
+      {introChapter && (
+        <a
+          href={`/${lang}/${introChapter.slug}`}
+          class:list={[
+            'block px-3 py-2.5 rounded-md text-base font-sans transition-colors mb-2',
+            currentSlug === introChapter.slug
+              ? 'bg-stone-200 dark:bg-stone-800 text-stone-900 dark:text-stone-100 font-medium'
+              : 'text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-900'
+          ]}
+        >
+          {introChapter.title}
+        </a>
+      )}
+
+      <!-- Parts with chapters -->
+      {partsList.map((part, index) => {
+        const firstChapterSlug = index === 0 ? (lang === 'fr' ? 'chapitre-1' : 'chapter-1')
+          : index === 1 ? (lang === 'fr' ? 'chapitre-3' : 'chapter-3')
+          : index === 2 ? (lang === 'fr' ? 'chapitre-6' : 'chapter-6')
+          : (lang === 'fr' ? 'chapitre-10' : 'chapter-10');
+        return (
+        <div class="mb-3">
+          <a href={`/${lang}/${firstChapterSlug}`} class="block px-3 py-2 text-xs font-sans font-bold uppercase tracking-wider sidebar-part-title transition-colors">
+            {part.title}
+          </a>
+          <ul class="space-y-1 ml-2">
+            {getChaptersForPart(part.id).map((chapter) => (
+              <li>
+                <a
+                  href={`/${lang}/${chapter.slug}`}
+                  class:list={[
+                    'block px-3 py-2 rounded-md text-base font-sans transition-colors',
+                    currentSlug === chapter.slug
+                      ? 'bg-stone-200 dark:bg-stone-800 text-stone-900 dark:text-stone-100 font-medium'
+                      : 'text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-900'
+                  ]}
+                >
+                  {chapter.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )})}
+
+      <!-- Conclusion -->
+      {conclusionChapter && (
+        <a
+          href={`/${lang}/${conclusionChapter.slug}`}
+          class:list={[
+            'block px-3 py-2.5 rounded-md text-base font-sans transition-colors mb-2',
+            currentSlug === conclusionChapter.slug
+              ? 'bg-stone-200 dark:bg-stone-800 text-stone-900 dark:text-stone-100 font-medium'
+              : 'text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-900'
+          ]}
+        >
+          {conclusionChapter.title}
+        </a>
+      )}
+
+      <!-- Resources -->
+      {resourcesChapter && (
+        <a
+          href={`/${lang}/${resourcesChapter.slug}`}
+          class:list={[
+            'block px-3 py-2.5 rounded-md text-base font-sans transition-colors',
+            currentSlug === resourcesChapter.slug
+              ? 'bg-stone-200 dark:bg-stone-800 text-stone-900 dark:text-stone-100 font-medium'
+              : 'text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-900'
+          ]}
+        >
+          {resourcesChapter.title}
+        </a>
+      )}
+
+      <!-- Divider -->
+      <hr class="my-4 border-stone-200 dark:border-stone-700" />
+
+      <!-- Special Pages -->
+      <ul class="space-y-1">
+        {specialPages.map((page) => (
+          <li>
+            <a
+              href={`/${lang}/${page.slug}`}
+              class:list={[
+                'block px-3 py-2.5 rounded-md text-base font-sans transition-colors',
+                currentSlug === page.slug
+                  ? 'bg-stone-200 dark:bg-stone-800 text-stone-900 dark:text-stone-100 font-medium'
+                  : 'text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-900'
+              ]}
+            >
+              {page.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Social Links -->
+      <div class="mt-6 px-3 flex flex-col gap-3">
+        <a
+          href="https://mahigan.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-base font-sans text-stone-500 dark:text-stone-400"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+          </svg>
+          mahigan.com
+        </a>
+        <a
+          href="https://x.com/mahiganL"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-base font-sans text-stone-500 dark:text-stone-400"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          @mahiganL
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
