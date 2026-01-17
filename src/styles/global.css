@@ -19,6 +19,11 @@
     scroll-behavior: smooth;
   }
 
+  /* Offset footnote anchors to account for sticky header */
+  [id^="ref"] {
+    scroll-margin-top: 5rem;
+  }
+
   body {
     font-family: var(--font-serif);
     background-color: var(--color-bg-light);
