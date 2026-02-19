@@ -4,7 +4,7 @@ Some see it as the new iPhone. Others, a shift rivaling the Industrial Revolutio
 
 Dismissing this new AI as just another gadget is absurd. Is it a disruption comparable to the dawn of the Internet? Even though LLMs are built on web data, their impact promises to be far more profound.
 
-There are many layers to peel back, including the impact on writing—my own field, which I will discuss elsewhere. For now, I will focus on two levels of disruption: economic risk and existential risk. These topics occasionally bubble up in mainstream discourse, but they receive a fraction of the attention they deserve.
+There are many layers to peel back, including the impact on writing—my own field, which I will discuss [elsewhere](https://intelligent-writing.com/en/). For now, I will focus on two levels of disruption: economic risk and existential risk. These topics occasionally bubble up in mainstream discourse, but they receive a fraction of the attention they deserve.
 
 We skim over these topics and move on. Why? I believe that between the AI we chat with daily—which looks like Google on steroids and usually seems _nice_ (we mistake sycophancy for politeness)—and the stark, dark portrait painted by certain thinkers regarding probable economic and existential consequences, there is a mental leap most people are not ready to make. We are at a moment in history where playing Cassandra still feels like madness; the Overton window has not yet shifted enough to make it acceptable to suggest that your chatbot risks crushing capitalism or leading humanity to its doom. (Of course, the threat isn't the chatbot itself, but the future iterations of the technology driving it.)
 

@@ -1,6 +1,6 @@
 # LE PROBLÈME DE L’ALIGNEMENT
 
-Une IA avancée aura sans doute des visées distinctes des aspirations humaines. On touche ici à la question de « l’alignement », un concept central de la sûreté de l’IA élaboré par le pionnier du domaine, Eliezer Yudkowsky, qui théorisait sur ces questions au début des années 2000, alors que la recherche en IA traversait un long hiver et que l’horizon de l’IAG ou de la SIA semblaient très lointains.
+Une IA avancée aura sans doute des visées distinctes des aspirations humaines. On touche ici à la question de « l’alignement », un concept central de la sûreté de l’IA élaboré par le pionnier du domaine, Eliezer Yudkowsky, qui théorisait sur ces questions au début des années 2000, alors que la recherche en IA traversait un long hiver et que l’horizon de l’IAG ou de la SIA semblait très lointain.
 
 « Alignement » veut dire harmonisation entre les objectifs et actions de l’IA, d'une part, et les aspirations de l’humanité, de l'autre. Il y a deux types d’alignement, aussi difficiles à atteindre l’un que l’autre :
 
