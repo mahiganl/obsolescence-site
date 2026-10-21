@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const lang = 'fr';
 const currentSlug = 'a-propos';
 
+import { Image } from 'astro:assets';
 import authorImage from '../../../assets/about-picture/mahigan-lepage.jpg';
 ---
 
@@ -16,8 +17,10 @@ import authorImage from '../../../assets/about-picture/mahigan-lepage.jpg';
 
   <article class="prose mx-auto">
     <figure class="mb-8">
-      <img
-        src={authorImage.src}
+      <Image
+        src={authorImage}
+        width={192}
+        densities={[1, 2]}
         alt="Mahigan Lepage"
         class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg"
       />

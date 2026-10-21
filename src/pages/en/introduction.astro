@@ -12,7 +12,7 @@ const bookTitle = languages[lang].bookTitle;
 import introImage from '../../../assets/colored-drawings/introduction.png';
 ---
 
-<BaseLayout title="Introduction" lang={lang} currentSlug={currentSlug} hideTitle={true} tagline="Will humans become a thing of the past?" ogImage={introImage.src}>
+<BaseLayout title="Introduction" lang={lang} currentSlug={currentSlug} hideTitle={true} tagline="Will humans become a thing of the past?" ogImage={introImage}>
   <!-- Essay Title Banner -->
   <header class="mb-8 text-center">
     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-stone-900 dark:text-stone-100 leading-tight mb-4">
@@ -27,7 +27,7 @@ import introImage from '../../../assets/colored-drawings/introduction.png';
   </header>
 
   <!-- Chapter Illustration -->
-  <ChapterIllustration src={introImage.src} alt="Illustration for the introduction" lang={lang} />
+  <ChapterIllustration src={introImage} alt="Illustration for the introduction" lang={lang} />
 
   <!-- Chapter Title -->
   <header class="mb-10 text-center">
@@ -86,7 +86,7 @@ import introImage from '../../../assets/colored-drawings/introduction.png';
     <hr />
 
     <p>
-      <em>All drawings accompanying this article were created by Mahigan Lepage and colored using Nano Banana Pro. To view the original grayscale drawings, <a href="/en/original-drawings">click here</a>.</em>
+      <em>All drawings accompanying this article were created by Mahigan Lepage and colored using Nano Banana Pro. To view the original grayscale drawings, <a href="/en/original-drawings/">click here</a>.</em>
     </p>
   </article>
 

@@ -32,7 +32,7 @@ const specialPages = [
 <aside class="hidden lg:block fixed inset-y-0 left-0 w-72 sidebar-bg border-r border-stone-200 overflow-y-auto">
   <div class="p-6">
     <!-- Book Title -->
-    <a href={`/${lang}/introduction`} class="block mb-8">
+    <a href={`/${lang}/introduction/`} class="block mb-8">
       <h1 class="text-xl font-semibold sidebar-title leading-tight">
         {bookTitle}
       </h1>
@@ -47,7 +47,7 @@ const specialPages = [
       <!-- Introduction -->
       {introChapter && (
         <a
-          href={`/${lang}/${introChapter.slug}`}
+          href={`/${lang}/${introChapter.slug}/`}
           class:list={[
             'block px-3 py-2 rounded-md text-sm font-sans transition-colors mb-2',
             currentSlug === introChapter.slug
@@ -67,14 +67,14 @@ const specialPages = [
           : (lang === 'fr' ? 'chapitre-10' : 'chapter-10');
         return (
         <div class="mb-3">
-          <a href={`/${lang}/${firstChapterSlug}`} class="block px-3 py-2 text-xs font-sans font-bold uppercase tracking-wider sidebar-part-title transition-colors">
+          <a href={`/${lang}/${firstChapterSlug}/`} class="block px-3 py-2 text-xs font-sans font-bold uppercase tracking-wider sidebar-part-title transition-colors">
             {part.title}
           </a>
           <ul class="space-y-1 ml-2">
             {getChaptersForPart(part.id).map((chapter) => (
               <li>
                 <a
-                  href={`/${lang}/${chapter.slug}`}
+                  href={`/${lang}/${chapter.slug}/`}
                   class:list={[
                     'block px-3 py-1.5 rounded-md text-sm font-sans transition-colors',
                     currentSlug === chapter.slug
@@ -93,7 +93,7 @@ const specialPages = [
       <!-- Conclusion -->
       {conclusionChapter && (
         <a
-          href={`/${lang}/${conclusionChapter.slug}`}
+          href={`/${lang}/${conclusionChapter.slug}/`}
           class:list={[
             'block px-3 py-2 rounded-md text-sm font-sans transition-colors mb-2',
             currentSlug === conclusionChapter.slug
@@ -108,7 +108,7 @@ const specialPages = [
       <!-- Resources -->
       {resourcesChapter && (
         <a
-          href={`/${lang}/${resourcesChapter.slug}`}
+          href={`/${lang}/${resourcesChapter.slug}/`}
           class:list={[
             'block px-3 py-2 rounded-md text-sm font-sans transition-colors',
             currentSlug === resourcesChapter.slug
@@ -128,7 +128,7 @@ const specialPages = [
         {specialPages.map((page) => (
           <li>
             <a
-              href={`/${lang}/${page.slug}`}
+              href={`/${lang}/${page.slug}/`}
               class:list={[
                 'block px-3 py-2 rounded-md text-sm font-sans transition-colors',
                 currentSlug === page.slug

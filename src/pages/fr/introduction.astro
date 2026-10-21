@@ -12,7 +12,7 @@ const bookTitle = languages[lang].bookTitle;
 import introImage from '../../../assets/colored-drawings/introduction.png';
 ---
 
-<BaseLayout title="Introduction" lang={lang} currentSlug={currentSlug} hideTitle={true} tagline="L'être humain tombera-t-il en désuétude?" ogImage={introImage.src}>
+<BaseLayout title="Introduction" lang={lang} currentSlug={currentSlug} hideTitle={true} tagline="L'être humain tombera-t-il en désuétude?" ogImage={introImage}>
   <!-- Essay Title Banner -->
   <header class="mb-8 text-center">
     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-stone-900 dark:text-stone-100 leading-tight mb-4">
@@ -27,7 +27,7 @@ import introImage from '../../../assets/colored-drawings/introduction.png';
   </header>
 
   <!-- Chapter Illustration -->
-  <ChapterIllustration src={introImage.src} alt="Illustration pour l'introduction" lang={lang} />
+  <ChapterIllustration src={introImage} alt="Illustration pour l'introduction" lang={lang} />
 
   <!-- Chapter Title -->
   <header class="mb-10 text-center">
@@ -86,7 +86,7 @@ import introImage from '../../../assets/colored-drawings/introduction.png';
     <hr />
 
     <p>
-      <em>Tous les dessins qui accompagnent cet article ont été faits par Mahigan Lepage et colorés au moyen de Nano Banana Pro. Pour voir les dessins originaux en tons de gris, <a href="/fr/dessins-originaux">cliquez ici</a>.</em>
+      <em>Tous les dessins qui accompagnent cet article ont été faits par Mahigan Lepage et colorés au moyen de Nano Banana Pro. Pour voir les dessins originaux en tons de gris, <a href="/fr/dessins-originaux/">cliquez ici</a>.</em>
     </p>
   </article>
 

@@ -16,14 +16,14 @@ const bookTitle = languages[lang].bookTitle;
 const alternateDomain = languages[alternateLang].domain;
 
 // Build absolute URL with domain for language switching
-const alternateUrl = `https://${alternateDomain}/${alternateLang}/${alternateSlug}`;
+const alternateUrl = `https://${alternateDomain}/${alternateLang}/${alternateSlug}/`;
 ---
 
 <header class="sticky top-0 z-40 bg-stone-50/95 dark:bg-stone-950/95 backdrop-blur border-b border-stone-200 dark:border-stone-800">
   <div class="px-4 sm:px-6 lg:px-8 py-4 max-w-3xl mx-auto flex items-center justify-between">
     <!-- Book Title (hidden on mobile, visible on larger screens, hidden if hideTitle is true) -->
     {!hideTitle && (
-      <a href={`/${lang}/introduction`} class="hidden sm:block text-lg font-medium font-sans text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 transition-colors">
+      <a href={`/${lang}/introduction/`} class="hidden sm:block text-lg font-medium font-sans text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 transition-colors">
         {bookTitle}
       </a>
     )}

@@ -9,7 +9,7 @@ const currentSlug = 'chapitre-3';
 import chapterImage from '../../../assets/colored-drawings/chapter 3.png';
 ---
 
-<BaseLayout title="Chapitre 3 – Le Grand Déclassement" lang={lang} currentSlug={currentSlug} ogImage={chapterImage.src}>
+<BaseLayout title="Chapitre 3 – Le Grand Déclassement" lang={lang} currentSlug={currentSlug} ogImage={chapterImage}>
   <!-- Part Header -->
   <div class="text-center mb-8">
     <p class="text-4xl sm:text-5xl font-sans font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300">
@@ -20,7 +20,7 @@ import chapterImage from '../../../assets/colored-drawings/chapter 3.png';
     </p>
   </div>
 
-  <ChapterIllustration src={chapterImage.src} alt="Illustration du chapitre 3" lang={lang} />
+  <ChapterIllustration src={chapterImage} alt="Illustration du chapitre 3" lang={lang} />
 
   <header class="mb-10 text-center">
     <p class="text-sm font-sans uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Chapitre 3</p>

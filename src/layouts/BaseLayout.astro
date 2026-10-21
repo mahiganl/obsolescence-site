@@ -1,10 +1,16 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/lora';
+import '@fontsource-variable/lora/wght-italic.css';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 import MobileMenu from '../components/MobileMenu.astro';
-import { languages, type Lang } from '../i18n/config';
+import { languages, getAlternateLang, getAlternateSlug, type Lang } from '../i18n/config';
+import defaultOgImage from '../../assets/colored-drawings/introduction.png';
 
 interface Props {
   title: string;
@@ -12,17 +18,88 @@ interface Props {
   currentSlug?: string;
   hideTitle?: boolean;
   tagline?: string;
-  ogImage?: string;
+  ogImage?: ImageMetadata;
   description?: string;
 }
 
 const { title, lang, currentSlug, hideTitle = false, tagline, ogImage, description } = Astro.props;
 const bookTitle = languages[lang].bookTitle;
-const domain = languages[lang].domain;
-const siteUrl = `https://${domain}`;
-const currentUrl = `${siteUrl}${Astro.url.pathname}`;
-const ogImageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/favicon.png`;
-const metaDescription = description || bookTitle;
+const siteUrl = `https://${languages[lang].domain}`;
+const alternateLang = getAlternateLang(lang);
+
+// URL canonique (toujours avec / final, comme servi par Netlify).
+// /fr/ et /fr/introduction/ ont le même contenu : l'introduction est la version canonique.
+const pageUrl = (l: Lang, slug: string) => `https://${languages[l].domain}/${l}/${slug}/`;
+const canonicalUrl = currentSlug ? pageUrl(lang, currentSlug) : `${siteUrl}${Astro.url.pathname}`;
+const alternateUrl = currentSlug ? pageUrl(alternateLang, getAlternateSlug(lang, currentSlug)) : undefined;
+const frUrl = lang === 'fr' ? canonicalUrl : alternateUrl;
+const isIntro = currentSlug === 'introduction';
+
+// Image de partage : JPEG 1200 px (l'original PNG fait 5-7 Mo, trop lourd pour les réseaux sociaux)
+const og = await getImage({ src: ogImage ?? defaultOgImage, width: 1200, format: 'jpeg', quality: 80 });
+const ogImageUrl = new URL(og.src, siteUrl).href;
+const bookCover = ogImage ? await getImage({ src: defaultOgImage, width: 1200, format: 'jpeg', quality: 80 }) : og;
+const bookImageUrl = new URL(bookCover.src, siteUrl).href;
+
+// Rendu du contenu une seule fois, pour en tirer une meta description propre à chaque page
+const content = await Astro.slots.render('default');
+
+function excerpt(html: string, max = 158): string {
+  const start = html.indexOf('<article');
+  const body = start >= 0 ? html.slice(start) : html;
+  const paragraphs = [...body.matchAll(/<(p|li)(?:\s[^>]*)?>([\s\S]*?)<\/\1>/g)]
+    .map((m) => m[2].replace(/<sup[\s\S]*?<\/sup>/g, '').replace(/<[^>]+>/g, ''))
+    .map((t) => t
+      .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+      .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16)))
+      .replace(/&nbsp;/g, ' ').replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
+      .replace(/\s+/g, ' ').trim())
+    .filter(Boolean);
+  let text = paragraphs.join(' ');
+  if (text.length <= max) return text;
+  text = text.slice(0, max);
+  return text.slice(0, text.lastIndexOf(' ')).replace(/[\s,;:–—-]+$/, '') + '…';
+}
+
+const metaDescription = description || excerpt(content) || bookTitle;
+const fullTitle = isIntro ? `${bookTitle} – ${title}` : `${title} | ${bookTitle}`;
+
+// Données structurées (schema.org) : le livre, et chaque chapitre comme article qui en fait partie
+const author = {
+  '@type': 'Person',
+  name: 'Mahigan Lepage',
+  url: 'https://mahigan.com/',
+  sameAs: ['https://x.com/mahiganL', 'https://mahigan.substack.com/'],
+};
+const book = {
+  '@type': 'Book',
+  name: bookTitle,
+  url: pageUrl(lang, 'introduction'),
+  author,
+  inLanguage: lang,
+  datePublished: '2026-01',
+  bookFormat: 'https://schema.org/EBook',
+  image: bookImageUrl,
+};
+const jsonLd = isIntro
+  ? {
+      '@context': 'https://schema.org',
+      ...book,
+      description: metaDescription,
+      workTranslation: { '@type': 'Book', name: languages[alternateLang].bookTitle, url: pageUrl(alternateLang, 'introduction'), inLanguage: alternateLang },
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description: metaDescription,
+      url: canonicalUrl,
+      mainEntityOfPage: canonicalUrl,
+      image: ogImageUrl,
+      inLanguage: lang,
+      author,
+      isPartOf: book,
+    };
 ---
 
 <!DOCTYPE html>
@@ -31,28 +108,40 @@ const metaDescription = description || bookTitle;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={metaDescription} />
-    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <meta name="author" content="Mahigan Lepage" />
+    <link rel="canonical" href={canonicalUrl} />
+    {alternateUrl && (
+      <>
+        <link rel="alternate" hreflang={lang} href={canonicalUrl} />
+        <link rel="alternate" hreflang={alternateLang} href={alternateUrl} />
+        <link rel="alternate" hreflang="x-default" href={frUrl} />
+      </>
+    )}
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#1a1a2e" />
     <!-- Open Graph / Facebook / LINE -->
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content={currentUrl} />
-    <meta property="og:title" content={`${title} | ${bookTitle}`} />
+    <meta property="og:type" content={isIntro ? 'book' : 'article'} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={metaDescription} />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content={String(og.attributes.width)} />
+    <meta property="og:image:height" content={String(og.attributes.height)} />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:site_name" content={bookTitle} />
     <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'fr' ? 'en_US' : 'fr_FR'} />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={currentUrl} />
-    <meta name="twitter:title" content={`${title} | ${bookTitle}`} />
+    <meta name="twitter:site" content="@mahiganL" />
+    <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={ogImageUrl} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
-    <title>{title} | {bookTitle}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <title>{fullTitle}</title>
     <ViewTransitions />
     <script is:inline>
       // Initialize theme before page renders to prevent flash
@@ -74,7 +163,7 @@ const metaDescription = description || bookTitle;
         <Header lang={lang} currentSlug={currentSlug} hideTitle={hideTitle} tagline={tagline} />
 
         <main class="px-4 sm:px-6 lg:px-8 py-8 max-w-3xl mx-auto" transition:animate="fade">
-          <slot />
+          <Fragment set:html={content} />
         </main>
 
         <!-- Footer -->
