@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import '@fontsource-variable/inter';
@@ -142,7 +142,7 @@ const jsonLd = isIntro
     <meta name="twitter:image" content={ogImageUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <title>{fullTitle}</title>
-    <ViewTransitions />
+    <ClientRouter />
     <script is:inline>
       // Initialize theme before page renders to prevent flash
       (function() {
