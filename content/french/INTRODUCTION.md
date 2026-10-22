@@ -2,7 +2,7 @@
 
 Le texte ne vise pas à présenter des idées nouvelles, mais bien à faire œuvre utile en synthétisant certaines des thèses les plus convaincantes qui brossent un portrait des risques liés à l’intelligence artificielle à mesure que celle-ci gagne en capacité.
 
-Au-delà de la bulle et de la « hype », l’objectif avoué de sociétés comme OpenAI, Google, Meta, DeepSeek ou xAI est de créer une intelligence artificielle générale (IAG) capable d’accomplir toutes les tâches que les êtres humains peuvent faire, voire une superintelligence artificielle (SIA) qui surpasserait tous les humains dans tous les domaines.
+Au-delà de la bulle et de la « hype », l’objectif avoué de sociétés comme OpenAI, Anthropic, Google, Meta, DeepSeek ou xAI est de créer une intelligence artificielle générale (IAG) capable d’accomplir toutes les tâches que les êtres humains peuvent faire, voire une superintelligence artificielle (SIA) qui surpasserait tous les humains dans tous les domaines.
 
 Les implications d’une telle invention sont sans commune mesure. Beaucoup d’experts estiment qu’une telle IA – égale ou supérieure à l’humain – pourrait être parmi nous d’ici la fin de la décennie. Elle risque de pousser les salaires sous le seuil de subsistance, selon le Prix Nobel d’économie Joseph Stiglitz, ou d’échapper à notre contrôle et même de nous rayer de la carte, selon le Prix Nobel de physique Geoffrey Hinton et le récipiendaire du Prix Turing Yoshua Bengio.
 

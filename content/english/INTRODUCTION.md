@@ -2,7 +2,7 @@ _Planned Human Obsolescence_ is intended as an accessible introduction to the pr
 
 This text does not claim to present novel ideas. Rather, it aims to serve a useful purpose by synthesizing the most convincing arguments regarding the risks associated with artificial intelligence as it grows in capability.
 
-Beyond the bubble and the hype, the stated goal of companies like OpenAI, Google, Meta, DeepSeek, or xAI is to create an artificial general intelligence (AGI) capable of performing every task human beings can do—or even an artificial superintelligence (ASI) that would surpass humans in every field.
+Beyond the bubble and the hype, the stated goal of companies like OpenAI, Anthropic, Google, Meta, DeepSeek, or xAI is to create an artificial general intelligence (AGI) capable of performing every task human beings can do—or even an artificial superintelligence (ASI) that would surpass humans in every field.
 
 The implications of such an invention are staggering. Many experts believe that such an AI—equal or superior to humans—could be here by the end of the decade. It threatens to drive wages below subsistence levels, according to Nobel Prize in Economics Joseph Stiglitz, or to escape our control and even wipe us off the map, according to Nobel Prize in Physics Geoffrey Hinton and Turing Prize recipient Yoshua Bengio.
 
