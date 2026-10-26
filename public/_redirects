@@ -1,3 +1,7 @@
+# www -> domaine nu, en gardant la langue du domaine
+https://www.human-obsolescence.com/*  https://human-obsolescence.com/:splat  301!
+https://www.obsolescence-humaine.com/*  https://obsolescence-humaine.com/:splat  301!
+
 # Séparation stricte des domaines
 
 # Si on demande du contenu FR sur le domaine Anglais -> Redirection vers le domaine Français
